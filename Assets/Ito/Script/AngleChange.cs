@@ -1,8 +1,13 @@
 using UnityEngine;
 
 
+
 public class AngleChange : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
+
+
+
     public float maxAngle = 90f;
     public float stepAngle = 45f;
 
@@ -15,6 +20,9 @@ public class AngleChange : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
             currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+            animator.SetTrigger("Gun Run");
 
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
     }

@@ -256,33 +256,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1 &458636001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
-  m_PrefabInstance: {fileID: 1760327374}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &458636003
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458636001}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c566d599cd6de2488c2055cdbec9196, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &458636004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
@@ -467,13 +440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ch09_nonPBR@Rifle Run
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 458636003}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
 --- !u!1 &2035043016
 GameObject:
@@ -485,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035043017}
   - component: {fileID: 2035043018}
+  - component: {fileID: 2035043019}
   m_Layer: 0
   m_Name: HeadPivot
   m_TagString: Untagged
@@ -520,8 +492,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea87314145721b4489bf1240ecc89463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AngleChange
+  animator: {fileID: 2035043019}
   maxAngle: 90
   stepAngle: 45
+--- !u!95 &2035043019
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035043016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1c566d599cd6de2488c2055cdbec9196, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig6:Hips'\n\tTransform 'mixamorig6:RightForeArm'\n\tTransform
+    'mixamorig6:Neck'\n\tTransform 'mixamorig6:RightToeBase'\n\tTransform 'mixamorig6:LeftToeBase'\n\tTransform
+    'mixamorig6:RightShoulder'\n\tTransform 'mixamorig6:Spine1'\n\tTransform 'mixamorig6:LeftShoulder'\n\tTransform
+    'mixamorig6:Hips'\n\tTransform 'mixamorig6:Spine'\n\tand more ...\n\tFrom animation
+    clip 'Rifle Run (2)'"
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
