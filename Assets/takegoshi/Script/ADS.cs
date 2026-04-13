@@ -30,6 +30,7 @@ public class ADS : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             PlayerAnimator.SetTrigger("Slide");
+            PlayerAnimator.SetTrigger("RifleRun");
         }
         
 
