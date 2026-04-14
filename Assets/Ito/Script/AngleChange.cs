@@ -15,10 +15,10 @@ public class AngleChange : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
 
         if(Input.GetKeyDown(KeyCode.Space))

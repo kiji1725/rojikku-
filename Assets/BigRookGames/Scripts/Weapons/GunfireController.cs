@@ -75,15 +75,16 @@ namespace BigRookGames.Weapons
         public void FireWeapon()
         {
             // --- Keep track of when the weapon is being fired ---
-            timeLastFired = Time.time;
+            timeLastFired = Time.time;      // 発射時間更新
 
             // --- Spawn muzzle flash ---
-            var flash = Instantiate(muzzlePrefab, muzzlePosition.transform);
+            var flash = Instantiate(muzzlePrefab, muzzlePosition.transform);        //マズルフラッシュ生成
 
             // --- Shoot Projectile Object ---
             if (projectilePrefab != null)
             {
-                GameObject newProjectile = Instantiate(projectilePrefab, muzzlePosition.transform.position, muzzlePosition.transform.rotation, transform);
+                GameObject newProjectile = Instantiate(projectilePrefab, 
+                    muzzlePosition.transform.position, muzzlePosition.transform.rotation, transform);   //弾の生成
             }
 
             // --- Disable any gameobjects, if needed ---
@@ -91,6 +92,7 @@ namespace BigRookGames.Weapons
             {
                 projectileToDisableOnFire.SetActive(false);
                 Invoke("ReEnableDisabledProjectile", 3);
+                // 弾の非表示（ロケット用など）3秒後に再表示
             }
 
             // --- Handle Audio ---
@@ -101,13 +103,15 @@ namespace BigRookGames.Weapons
                 // the parent gameobject or the program will get stuck in a loop, so we check to see if the source is a child object ---
                 if(source.transform.IsChildOf(transform))
                 {
-                    source.Play();
+                    source.Play();      //音の再生　パターン①：AudioSourceが子オブジェクト
                 }
                 else
                 {
                     // --- Instantiate prefab for audio, delete after a few seconds ---
-                    AudioSource newAS = Instantiate(source);
-                    if ((newAS = Instantiate(source)) != null && newAS.outputAudioMixerGroup != null && newAS.outputAudioMixerGroup.audioMixer != null)
+                    AudioSource newAS = Instantiate(source);        // パターン②：別オブジェクト（連射対応）
+                    if (newAS != null &&
+                        newAS.outputAudioMixerGroup != null && 
+                        newAS.outputAudioMixerGroup.audioMixer != null)
                     {
                         // --- Change pitch to give variation to repeated shots ---
                         newAS.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", Random.Range(audioPitch.x, audioPitch.y));
@@ -128,8 +132,8 @@ namespace BigRookGames.Weapons
 
         private void ReEnableDisabledProjectile()
         {
-            reloadSource.Play();
-            projectileToDisableOnFire.SetActive(true);
+            reloadSource.Play();                        // リロード音の再生
+            projectileToDisableOnFire.SetActive(true);  // 非表示にした弾の再表示
         }
     }
 }
