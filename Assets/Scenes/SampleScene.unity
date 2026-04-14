@@ -482,6 +482,7 @@ MonoBehaviour:
   destroyDelay: 3
   targets:
   - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1155999945
 Transform:
   m_ObjectHideFlags: 0
