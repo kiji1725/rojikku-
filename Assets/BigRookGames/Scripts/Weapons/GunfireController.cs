@@ -5,25 +5,25 @@ namespace BigRookGames.Weapons
     public class GunfireController : MonoBehaviour
     {
         // --- Audio ---
-        public AudioClip GunShotClip;
-        public AudioClip ReloadClip;
-        public AudioSource source;
-        public AudioSource reloadSource;
-        public Vector2 audioPitch = new Vector2(.9f, 1.1f);
+        public AudioClip GunShotClip;       //発射音
+        public AudioClip ReloadClip;        //リロード音
+        public AudioSource source;          //発射音を鳴らすAudioSource
+        public AudioSource reloadSource;    //リロード音を鳴らすAudioSource
+        public Vector2 audioPitch = new Vector2(.9f, 1.1f); //音の高さをランダムに変えて単調さを防ぐ
 
         // --- Muzzle ---
-        public GameObject muzzlePrefab;
-        public GameObject muzzlePosition;
+        public GameObject muzzlePrefab;     //発射時のエフェクト
+        public GameObject muzzlePosition;   //銃口の位置
 
         // --- Config ---
-        public bool autoFire;
-        public float shotDelay = .5f;
-        public bool rotate = true;
-        public float rotationSpeed = .25f;
+        public bool autoFire;           //自動で発射するか
+        public float shotDelay = .5f;   //発射の間隔
+        public bool rotate = true;      //銃を回転させるか(見た目)
+        public float rotationSpeed = .25f;  //回転速度
 
         // --- Options ---
-        public GameObject scope;
-        public bool scopeActive = true;
+        public GameObject scope;          //スコープのオブジェクト
+        public bool scopeActive = true;   //スコープON/OFF切り替え
         private bool lastScopeState;
 
         // --- Projectile ---
@@ -34,7 +34,7 @@ namespace BigRookGames.Weapons
         public GameObject projectileToDisableOnFire;
 
         // --- Timing ---
-        [SerializeField] private float timeLastFired;
+        [SerializeField] private float timeLastFired;   //最後に発射した時間
 
 
         private void Start()
@@ -47,14 +47,14 @@ namespace BigRookGames.Weapons
         private void Update()
         {
             // --- If rotate is set to true, rotate the weapon in scene ---
-            if (rotate)
+            if (rotate)     //武器を回転させる
             {
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
                                                                         + rotationSpeed, transform.localEulerAngles.z);
             }
 
             // --- Fires the weapon if the delay time period has passed since the last shot ---
-            if (autoFire && ((timeLastFired + shotDelay) <= Time.time))
+            if (autoFire && ((timeLastFired + shotDelay) <= Time.time))     //一定時間ごとに FireWeapon() を実行
             {
                 FireWeapon();
             }
@@ -63,7 +63,7 @@ namespace BigRookGames.Weapons
             if(scope && lastScopeState != scopeActive)
             {
                 lastScopeState = scopeActive;
-                scope.SetActive(scopeActive);
+                scope.SetActive(scopeActive);       //スコープのON/OFF切り替え
             }
         }
 
