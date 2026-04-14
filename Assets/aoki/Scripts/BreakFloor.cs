@@ -16,14 +16,14 @@ public class BreakFloor : MonoBehaviour
     }
 
     //Update is called once per frame
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Break();
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Break();
+    //    }
 
-    }
+    //}
     /*void Update()
     {
        if (Input.GetKeyDown(KeyCode.Space))
@@ -34,7 +34,7 @@ public class BreakFloor : MonoBehaviour
 
 
 
-    void Break()
+    public void Break()
     {
         if (isBroken) return;
         isBroken = true;
