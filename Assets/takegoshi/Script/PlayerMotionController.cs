@@ -14,8 +14,8 @@ public class PlayerMotionController : MonoBehaviour
 
     // ジャンプ用
     [SerializeField] float jumpForce = 5f;
-    [SerializeField] private Rigidbody rb;
-    private bool isGround;
+    bool jumpFlag = false;
+    // [SerializeField] private Rigidbody rb;
 
 
 
@@ -49,33 +49,25 @@ public class PlayerMotionController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) 
             || Input.GetKeyDown(KeyCode.UpArrow)
-            && isGround)
+            && !jumpFlag)
         {
+
             PlayerAnimator.SetTrigger(jump);
 
-            Jump();
         }
 
 
 
     }
 
-
-    public void Jump()
+    // アニメーションのEventで使う用の関数
+    public void IsJumpFragOn()
     {
-        
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        isGround = false;
-
-
+        jumpFlag = true;
     }
-
-    private void OnCollisionEnter(Collision collision)
+    public void IsJumpFragOff()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGround = true;
-        }
+        jumpFlag = false;
     }
 
 
