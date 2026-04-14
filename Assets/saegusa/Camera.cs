@@ -3,9 +3,9 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public Transform player;                
-    public Vector3 offset = new Vector3(0f, 60f, -30f);  
+    public Vector3 offset = new Vector3(0f, 1.4f, -4f);  
     public Vector3 rotation = new Vector3(50f, 0f, 0f);
-
+    
     private float fixedX; // èâä˙à íuäÓèÄÇÃXç¿ïW
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +36,6 @@ public class Camera : MonoBehaviour
             player.position.z + offset.z
         );
 
-        transform.LookAt(player.position + Vector3.up * 20f);
+        transform.LookAt(player.position + Vector3.up * 2f);
     }
 }
