@@ -54,13 +54,17 @@ namespace BigRookGames.Weapons
             }
 
             // --- Fires the weapon if the delay time period has passed since the last shot ---
-            if (autoFire && ((timeLastFired + shotDelay) <= Time.time))     //一定時間ごとに FireWeapon() を実行
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                FireWeapon();
+                // 発射間隔チェック
+                if ((timeLastFired + shotDelay) <= Time.time)
+                {
+                    FireWeapon();
+                }
             }
 
             // --- Toggle scope based on public variable value ---
-            if(scope && lastScopeState != scopeActive)
+            if (scope && lastScopeState != scopeActive)
             {
                 lastScopeState = scopeActive;
                 scope.SetActive(scopeActive);       //スコープのON/OFF切り替え
