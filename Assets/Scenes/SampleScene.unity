@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPush
   force: 500
+  delay: 3
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,9 +476,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c21ce60724eb864597b2556975f368f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleBlow
-  radius: 1
   power: 0.01
-  direction: {x: 0, y: 0, z: 1}
+  forwardForce: 1
+  upwardForce: 0.3
+  destroyDelay: 3
+  targets:
+  - {fileID: 0}
 --- !u!4 &1155999945
 Transform:
   m_ObjectHideFlags: 0
