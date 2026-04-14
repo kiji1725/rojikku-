@@ -13,11 +13,10 @@ public class PlayerMotionController : MonoBehaviour
 
 
     // ジャンプ用
+    [SerializeField] private Rigidbody rb;
     [SerializeField] float jumpForce = 5f;
-    bool jumpFlag = false;
-    // [SerializeField] private Rigidbody rb;
-
-
+    public bool jumpFlag = false;
+    public bool isGround = true;
 
 
     void Start()
@@ -40,19 +39,21 @@ public class PlayerMotionController : MonoBehaviour
             //Debug.Log("off");
             PlayerAnimator.SetTrigger(run);
         }
-
-        if (Input.GetKeyDown(KeyCode.S))
+        // スライディング↓orSキー
+        if (Input.GetKeyDown(KeyCode.S)
+            || Input.GetKeyDown(KeyCode.DownArrow))
         {
             PlayerAnimator.SetTrigger(slide);
             
         }
-
-        if (Input.GetKeyDown(KeyCode.W) 
-            || Input.GetKeyDown(KeyCode.UpArrow)
-            && !jumpFlag)
+        // スライディング↑orWキー
+        if ((Input.GetKeyDown(KeyCode.W) 
+            || Input.GetKeyDown(KeyCode.UpArrow))
+            && (!jumpFlag))
         {
-
+            jumpFlag = true;
             PlayerAnimator.SetTrigger(jump);
+            Jump();
 
         }
 
@@ -60,20 +61,32 @@ public class PlayerMotionController : MonoBehaviour
 
     }
 
-    // アニメーションのEventで使う用の関数
-    public void IsJumpFragOn()
+    // ジャンプ
+    void Jump()
     {
-        jumpFlag = true;
-    }
-    public void IsJumpFragOff()
-    {
-        jumpFlag = false;
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isGround = false;
     }
 
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGround = true;
+        }
+    }
+
+    // アニメーションのEventに使う関数
     public void SetRifleRun()
     {
         PlayerAnimator.SetTrigger(run);
     }
+    public void IsJump()
+    {
+        jumpFlag = false;
+    }
+
 
 }
