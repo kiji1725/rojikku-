@@ -3287,6 +3287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4767326921105855604}
   - component: {fileID: 2256259694567662187}
+  - component: {fileID: 2185245398826889170}
   m_Layer: 0
   m_Name: Break_Wall
   m_TagString: Untagged
@@ -3303,7 +3304,7 @@ Transform:
   m_GameObject: {fileID: 2406701451260807764}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14, y: 0.89, z: -3.67}
+  m_LocalPosition: {x: -0.35237774, y: -0.00000014017132, z: -6.5286665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3340,6 +3341,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2185245398826889170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406701451260807764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bd5b2c7f9dac348900ef1483419ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallBreak
+  force: 500
+  delay: 3
 --- !u!1 &2414208370514170461
 GameObject:
   m_ObjectHideFlags: 0
