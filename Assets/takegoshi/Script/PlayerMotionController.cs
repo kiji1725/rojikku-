@@ -40,13 +40,13 @@ public class PlayerMotionController : MonoBehaviour
             PlayerAnimator.SetTrigger(run);
         }
         // スライディング↓orSキー
-        if (Input.GetKeyDown(KeyCode.S)
-            || Input.GetKeyDown(KeyCode.DownArrow))
+        if ((Input.GetKeyDown(KeyCode.S)
+            || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag)
         {
             PlayerAnimator.SetTrigger(slide);
             
         }
-        // スライディング↑orWキー
+        // ジャンプ↑orWキー
         if ((Input.GetKeyDown(KeyCode.W) 
             || Input.GetKeyDown(KeyCode.UpArrow))
             && (!jumpFlag))
