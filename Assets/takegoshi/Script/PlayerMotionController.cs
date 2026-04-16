@@ -11,12 +11,13 @@ public class PlayerMotionController : MonoBehaviour
     string slide = "Slide";
     string jump = "Jump";
 
-
     // ジャンプ用
     [SerializeField] private Rigidbody rb;
     [SerializeField] float jumpForce = 5f;
     public bool jumpFlag = false;
     public bool isGround = true;
+    public bool isSliding = false;
+
 
 
     void Start()
@@ -40,9 +41,13 @@ public class PlayerMotionController : MonoBehaviour
             PlayerAnimator.SetTrigger(run);
         }
         // スライディング↓orSキー
-        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag)
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) 
+            && !jumpFlag && !isSliding)
         {
+
+            isSliding = true;
             PlayerAnimator.SetTrigger(slide);
+
             
         }
         // ジャンプ↑orWキー
@@ -80,10 +85,18 @@ public class PlayerMotionController : MonoBehaviour
     {
         PlayerAnimator.SetTrigger(run);
     }
+    public void SlidingOff()
+    {
+        isSliding = false;
+    }
+
     public void IsJump()
     {
         jumpFlag = false;
     }
+
+    public bool IsSliding {  get { return isSliding; } }
+
 
 
 }
