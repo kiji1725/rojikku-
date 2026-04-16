@@ -25,6 +25,10 @@ namespace BigRookGames.Weapons
         // --- VFX ---
         public ParticleSystem disableOnHit;
 
+        private void Start()
+        {
+            Invoke("ExplodeIfNotHit", 3f); // 3秒後
+        }
 
         private void Update()
         {
@@ -33,6 +37,7 @@ namespace BigRookGames.Weapons
 
             // --- moves the game object in the forward direction at the defined speed ---
             transform.position += transform.forward * (speed * Time.deltaTime);
+
         }
 
 
@@ -58,7 +63,7 @@ namespace BigRookGames.Weapons
 
 
             // --- Destroy this object after 2 seconds. Using a delay because the particle system needs to finish ---
-            Destroy(gameObject, 5f);
+            // Destroy(gameObject, 5f);
         }
 
 
@@ -67,10 +72,24 @@ namespace BigRookGames.Weapons
         /// </summary>
         private void Explode()
         {
-            // --- Instantiate new explosion option. I would recommend using an object pool ---
-            GameObject newExplosion = Instantiate(rocketExplosion, transform.position, rocketExplosion.transform.rotation, null);
+            GameObject newExplosion =
+                Instantiate
+                (rocketExplosion, transform.position,
+                rocketExplosion.transform.rotation, null);
 
+            // エフェクトの長さを取得して、その後に消す
+            ParticleSystem ps = newExplosion.GetComponent<ParticleSystem>();
+            float duration = ps.main.duration;
+            float startLifetime = ps.main.startLifetime.constantMax;
 
+            Destroy(gameObject, duration + startLifetime);
+        }
+        private void ExplodeIfNotHit()
+        {
+            if (targetHit) return; // すでに当たってたら何もしない
+
+            Explode();
+            Destroy(gameObject);
         }
     }
 }
