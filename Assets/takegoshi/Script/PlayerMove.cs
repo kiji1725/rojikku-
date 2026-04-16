@@ -32,8 +32,11 @@ public class PlayerMove : MonoBehaviour
         
         move = new Vector3(moveX, 0, moveZ).normalized;
 
+        if (transform.position.y < -5f)
+        {
+            SceneManager.LoadScene("GameOver 1");
+        }
 
-        
     }
     
 }
