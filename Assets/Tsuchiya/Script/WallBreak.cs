@@ -1,30 +1,25 @@
-using System.Collections;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using System.Collections;
 
-//弾はRigidbody(Is Kinematicはオフ) ,Collider(Edit ColliderとProvides Contactsはオフ)必須
-//targets にドラッグ
-
-// ▼重なったら爆散（Trigger版）
 public class BreakOnHit : MonoBehaviour
 {
     public float force = 500f;
     public float delay = 3f;
 
-    // ▼ここに当たり判定させたいオブジェクト
-    public GameObject[] targets;
+    // ▼タグ指定（例："Bullet"）
+    public string targetTag = "Bullet";
 
     Rigidbody[] bodies;
-    Collider[] cols;
+    Collider parentCol;
 
     bool isBroken = false;
 
     void Start()
     {
         bodies = GetComponentsInChildren<Rigidbody>();
-        cols = GetComponentsInChildren<Collider>();
+        parentCol = GetComponent<Collider>();
 
-        // ▼最初は完全固定（崩壊防止）
+        // ▼最初は固定
         foreach (Rigidbody rb in bodies)
         {
             rb.isKinematic = true;
@@ -36,14 +31,10 @@ public class BreakOnHit : MonoBehaviour
     {
         if (isBroken) return;
 
-        foreach (GameObject target in targets)
+        // ▼タグで判定（これだけでOK）
+        if (other.CompareTag(targetTag))
         {
-            // ▼子オブジェクトでも反応するようにする
-            if (other.gameObject == target || other.transform.root == target.transform)
-            {
-                Break(other.transform.position);
-                return;
-            }
+            Break(other.transform.position);
         }
     }
 
@@ -51,13 +42,12 @@ public class BreakOnHit : MonoBehaviour
     {
         isBroken = true;
 
-        // ▼全部のColliderを無効化（再判定防止）
-        foreach (Collider c in cols)
+        // ▼Triggerだけ無効化（破片は残す）
+        if (parentCol != null)
         {
-            c.enabled = false;
+            parentCol.enabled = false;
         }
 
-        // ▼物理ON＋爆発
         foreach (Rigidbody rb in bodies)
         {
             rb.isKinematic = false;
