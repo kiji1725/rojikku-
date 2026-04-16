@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 1185606398}
   - component: {fileID: 1185606401}
   - component: {fileID: 1185606402}
+  - component: {fileID: 1185606403}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -982,7 +983,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185606397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c6465047e8b1434caa42bd401149152, type: 3}
   m_Name: 
@@ -990,6 +991,24 @@ MonoBehaviour:
   player: {fileID: 336393197}
   offset: {x: 0, y: 1.4, z: -4}
   rotation: {x: 50, y: 0, z: 0}
+--- !u!114 &1185606403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185606397}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da190bfc0efd6fa42b0f54abcd3f64bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestCamera
+  target: {fileID: 336393197}
+  offset: {x: 0, y: 2, z: -4}
+  lookOffset: {x: 0, y: 1.5, z: 2}
+  zoomSpeed: 2
+  minDistance: -2
+  maxDistance: -8
 --- !u!1001 &1785828315
 PrefabInstance:
   m_ObjectHideFlags: 0
