@@ -107,7 +107,7 @@ public class PlayerP : MonoBehaviour
             SceneManager.LoadScene("PauseScene");
             return;
         }
-        // �����~�X
+         //�����~�X
         if (transform.position.y < -5f)
         {
             Miss();
@@ -140,13 +140,13 @@ public class PlayerP : MonoBehaviour
                 if (contact.normal.y > 0.5f)
                 {
                     isGrounded = true;
-                    animator.ResetTrigger("JumpTrigger");
+                    //animator.ResetTrigger("JumpTrigger");
                     break;
                 }
             }
         }
 
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("out"))
         {
             Miss();
         }
@@ -157,25 +157,27 @@ public class PlayerP : MonoBehaviour
     // ======================
     void Miss()
     {
-        if (dead) return;
 
-        dead = true;
-        deathCount++;   // �� ���S�񐔂𑝂₷
-        totalDeathCount++;   // ���g�[�^��
+        SceneManager.LoadScene("GameOver 1");
+        //if (dead) return;
 
-        if (damageSE != null)
-            audioSource.PlayOneShot(damageSE);
+        //dead = true;
+        //deathCount++;   // �� ���S�񐔂𑝂₷
+        //totalDeathCount++;   // ���g�[�^��
 
-        Debug.Log("���S�񐔁F" + deathCount);
-        Debug.Log("�g�[�^�����S�񐔁F" + totalDeathCount);
-        if (deathCount >= maxDeathCount)
-        {
-            SceneManager.LoadScene("GameOver");
-            return;
-        }
+        //if (damageSE != null)
+        //    audioSource.PlayOneShot(damageSE);
 
-        animator.SetBool("Fall", true);
-        StartCoroutine(RestartStage());
+        //Debug.Log("���S�񐔁F" + deathCount);
+        //Debug.Log("�g�[�^�����S�񐔁F" + totalDeathCount);
+        //if (deathCount >= maxDeathCount)
+        //{
+        //    SceneManager.LoadScene("GameOver");
+        //    return;
+        //}
+
+        //animator.SetBool("Fall", true);
+        //StartCoroutine(RestartStage());
     }
 
     IEnumerator RestartStage()
