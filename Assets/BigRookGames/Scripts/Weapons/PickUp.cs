@@ -34,7 +34,7 @@ public class PickUp : MonoBehaviour
     {
         if (other.CompareTag("Ammo"))
         {
-            AddAmmo(10);
+            AddAmmo(1);
             Destroy(other.gameObject);
         }
     }
