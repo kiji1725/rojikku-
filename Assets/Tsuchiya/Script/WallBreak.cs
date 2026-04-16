@@ -42,6 +42,8 @@ public class BreakOnHit : MonoBehaviour
     {
         isBroken = true;
 
+        gameObject.tag = "Ground";
+
         // Å•TriggerÇæÇØñ≥å¯âªÅiîjï–ÇÕécÇ∑Åj
         if (parentCol != null)
         {
@@ -50,9 +52,17 @@ public class BreakOnHit : MonoBehaviour
 
         foreach (Rigidbody rb in bodies)
         {
+
+            rb.gameObject.tag = "Ground"; 
+
             rb.isKinematic = false;
             rb.useGravity = true;
-
+           
+            Collider col = rb.GetComponent<Collider>();
+            if (col != null)
+            {
+                col.enabled = false;
+            }
             Vector3 dir = (rb.worldCenterOfMass - hitPoint).normalized;
             rb.AddForce(dir * force, ForceMode.Impulse);
         }
