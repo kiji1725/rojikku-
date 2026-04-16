@@ -27,17 +27,13 @@ public class WallBreak : MonoBehaviour
 
     void Update()
     {
-        // ▼スペースキーで発動（デバッグ用）
-        if (Input.GetKeyDown(KeyCode.Space))
+        // ▼当たり判定をオフにする
+        if (col != null)
         {
-            // ▼当たり判定をオフにする
-            if (col != null)
-            {
-                col.enabled = false;
-            }
-
-            StartCoroutine(ExplodeAndDelete());
+            col.enabled = false;
         }
+
+        StartCoroutine(ExplodeAndDelete());
     }
 
     // ▼壁を爆散させて一定時間後に削除する処理
