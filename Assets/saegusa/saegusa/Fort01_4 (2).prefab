@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1684339078284521047}
   m_Layer: 0
   m_Name: Fort01_4 (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fort01_4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3383548471223943447, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -172,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 166938, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 410362, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,6 +244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fort01_4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3383548471223943447, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -302,6 +310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fort01_4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3383548471223943447, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -363,6 +375,10 @@ PrefabInstance:
     - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_Name
       value: Fort01_4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 3383548471223943447, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -493,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 166938, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 410362, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -561,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fort01_4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3383548471223943447, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -601,6 +621,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5402594505533535080, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -625,6 +649,14 @@ PrefabInstance:
     - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_Name
       value: Fort01_4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 26933952110849625, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 150171647187390009, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 3383548471223943447, guid: b2894381456ada4418606bfef6528e0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -666,6 +698,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3876601383853647071, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402594505533535080, guid: b2894381456ada4418606bfef6528e0a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -693,6 +733,10 @@ PrefabInstance:
     - target: {fileID: 166938, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
       propertyPath: m_Name
       value: Fort01_4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 166938, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 410362, guid: ab62653d1751ac54a8dcb04a6e49ef88, type: 3}
       propertyPath: m_LocalPosition.x
