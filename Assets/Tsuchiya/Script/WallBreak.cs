@@ -7,7 +7,7 @@ public class BreakOnHit : MonoBehaviour
     public float delay = 3f;
 
     // ▼タグ指定（例："Bullet"）
-    public string targetTag = "Bullet";
+    public string targetTag = "Bool";
 
     Rigidbody[] bodies;
     Collider parentCol;
