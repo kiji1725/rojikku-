@@ -312,6 +312,7 @@ MonoBehaviour:
   jumpForce: 5
   jumpFlag: 0
   isGround: 1
+  isSliding: 0
 --- !u!95 &187648925 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 29576b7a21f391d459b3871ee90f55c0, type: 3}
@@ -367,6 +368,7 @@ MonoBehaviour:
   jumpForce: 5
   jumpFlag: 0
   isGround: 1
+  isSliding: 0
 --- !u!54 &336393195
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -837,6 +839,29 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1898312446}
   m_SourcePrefab: {fileID: 100100000, guid: d1028c0c7ac28b74baedfe9b4d1c6872, type: 3}
+--- !u!1 &932587043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d2aec1c8777162541affa3f6c459ce40, type: 3}
+  m_PrefabInstance: {fileID: 1785828315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &932587044 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: d2aec1c8777162541affa3f6c459ce40, type: 3}
+  m_PrefabInstance: {fileID: 1785828315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &932587046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932587043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98d24e8cc8da25478e6780d4d526565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  animator: {fileID: 932587044}
 --- !u!1 &1185606397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,13 +1103,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 805e8754056da3647ac356aaaa94de6f, type: 2}
     - target: {fileID: 5866666021909216657, guid: d2aec1c8777162541affa3f6c459ce40, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+        'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+        'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'Running_Enemy'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d2aec1c8777162541affa3f6c459ce40, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d2aec1c8777162541affa3f6c459ce40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932587046}
   m_SourcePrefab: {fileID: 100100000, guid: d2aec1c8777162541affa3f6c459ce40, type: 3}
 --- !u!1 &1898312441 stripped
 GameObject:
@@ -1108,6 +1146,7 @@ MonoBehaviour:
   jumpForce: 0
   jumpFlag: 0
   isGround: 1
+  isSliding: 0
 --- !u!95 &1898312444 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: d1028c0c7ac28b74baedfe9b4d1c6872, type: 3}
@@ -1150,7 +1189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cf83bb749d903984891ce8ebc27759f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.34
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf83bb749d903984891ce8ebc27759f9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1158,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf83bb749d903984891ce8ebc27759f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.61
+      value: -8.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf83bb749d903984891ce8ebc27759f9, type: 3}
       propertyPath: m_LocalRotation.w
