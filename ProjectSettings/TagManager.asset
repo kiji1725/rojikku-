@@ -5,9 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+<<<<<<< HEAD
   - out
   - Bool
   - Ammo
+=======
+  - Bullet
+>>>>>>> 6d789c9a8f94babcedda655011e6d2c796b16862
   layers:
   - Default
   - TransparentFX

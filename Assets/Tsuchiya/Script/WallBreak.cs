@@ -1,62 +1,79 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-// 壁を爆散させる処理クラス
-public class WallBreak : MonoBehaviour
+//弾はRigidbody(Is Kinematicはオフ) ,Collider(Edit ColliderとProvides Contactsはオフ)必須
+//targets にドラッグ
+
+// ▼重なったら爆散（Trigger版）
+public class BreakOnHit : MonoBehaviour
 {
-    // ▼吹っ飛ばす力の強さ
     public float force = 500f;
-
-    // ▼削除までの待機時間（秒）
     public float delay = 3f;
 
-    // ▼このオブジェクト配下のRigidbodyを取得
-    Rigidbody[] bodies;
+    // ▼ここに当たり判定させたいオブジェクト
+    public GameObject[] targets;
 
-    // ▼当たり判定（Collider）
-    Collider col;
+    Rigidbody[] bodies;
+    Collider[] cols;
+
+    bool isBroken = false;
 
     void Start()
     {
-        // 子オブジェクトも含めて取得
         bodies = GetComponentsInChildren<Rigidbody>();
+        cols = GetComponentsInChildren<Collider>();
 
-        // 自分のCollider取得
-        col = GetComponent<Collider>();
-    }
-
-    void Update()
-    {
-        // ▼当たり判定をオフにする
-        if (col != null)
-        {
-            col.enabled = false;
-        }
-
-        StartCoroutine(ExplodeAndDelete());
-    }
-
-    // ▼壁を爆散させて一定時間後に削除する処理
-    IEnumerator ExplodeAndDelete()
-    {
-        // ▼このオブジェクト配下のオブジェクトだけ吹っ飛ばす
+        // ▼最初は完全固定（崩壊防止）
         foreach (Rigidbody rb in bodies)
         {
-            if (rb == null) continue;
+            rb.isKinematic = true;
+            rb.useGravity = false;
+        }
+    }
 
-            // ▼ランダム方向＋少し上方向
-            Vector3 dir = (Random.onUnitSphere + Vector3.up).normalized;
+    void OnTriggerEnter(Collider other)
+    {
+        if (isBroken) return;
 
-            // ▼力を加える
+        foreach (GameObject target in targets)
+        {
+            // ▼子オブジェクトでも反応するようにする
+            if (other.gameObject == target || other.transform.root == target.transform)
+            {
+                Break(other.transform.position);
+                return;
+            }
+        }
+    }
+
+    void Break(Vector3 hitPoint)
+    {
+        isBroken = true;
+
+        // ▼全部のColliderを無効化（再判定防止）
+        foreach (Collider c in cols)
+        {
+            c.enabled = false;
+        }
+
+        // ▼物理ON＋爆発
+        foreach (Rigidbody rb in bodies)
+        {
+            rb.isKinematic = false;
+            rb.useGravity = true;
+
+            Vector3 dir = (rb.worldCenterOfMass - hitPoint).normalized;
             rb.AddForce(dir * force, ForceMode.Impulse);
         }
 
-        Debug.Log("爆散した");
+        StartCoroutine(DeleteAfterDelay());
+    }
 
-        // ▼待機
+    IEnumerator DeleteAfterDelay()
+    {
         yield return new WaitForSeconds(delay);
 
-        // ▼削除（子オブジェクトのみ）
         foreach (Rigidbody rb in bodies)
         {
             if (rb != null)
@@ -64,7 +81,5 @@ public class WallBreak : MonoBehaviour
                 Destroy(rb.gameObject);
             }
         }
-
-        Debug.Log("削除完了");
     }
 }
