@@ -19,7 +19,7 @@ public class ColliderController : MonoBehaviour
         if (playerMotion.isSliding)
         {
 
-            capsule.direction = 0;
+            capsule.direction = 2;
             capsule.center = new Vector3(0.0f, 0.4f, 0.0f);
 
         }

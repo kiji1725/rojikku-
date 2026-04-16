@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMotionController : MonoBehaviour
 {
@@ -78,6 +79,12 @@ public class PlayerMotionController : MonoBehaviour
         {
             isGround = true;
         }
+
+        if (collision.gameObject.CompareTag("out"))
+        {
+            SceneManager.LoadScene("GameOver 1");
+        }
+
     }
 
     // アニメーションのEventに使う関数

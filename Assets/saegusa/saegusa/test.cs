@@ -148,7 +148,7 @@ public class PlayerP : MonoBehaviour
 
         if (collision.gameObject.CompareTag("out"))
         {
-            Miss();
+            SceneManager.LoadScene("GameOver 1");
         }
     }
 

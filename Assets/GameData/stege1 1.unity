@@ -9939,6 +9939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1046040466876592057, guid: 84688b3a49dc6cb43b96a69d07cf6185, type: 3}
+      propertyPath: m_TagString
+      value: out
+      objectReference: {fileID: 0}
     - target: {fileID: 4610528856789371331, guid: 84688b3a49dc6cb43b96a69d07cf6185, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.74
@@ -9992,6 +9996,10 @@ PrefabInstance:
       value: SM_AFS_Log12_HighEndPC
       objectReference: {fileID: 0}
     - target: {fileID: 5250625570640813250, guid: 84688b3a49dc6cb43b96a69d07cf6185, type: 3}
+      propertyPath: m_TagString
+      value: out
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350003403142759832, guid: 84688b3a49dc6cb43b96a69d07cf6185, type: 3}
       propertyPath: m_TagString
       value: out
       objectReference: {fileID: 0}
