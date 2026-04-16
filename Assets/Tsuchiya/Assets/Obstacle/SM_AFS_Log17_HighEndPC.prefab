@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 807485043133791238}
   m_Layer: 0
   m_Name: SM_AFS_Log17_HighEndPC
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
