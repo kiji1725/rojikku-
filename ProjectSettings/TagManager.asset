@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+<<<<<<< HEAD
+  - Ammo
+=======
   - out
+>>>>>>> 9db15a1dfd9282a0b11ba02f737f196ff6ec33b0
   layers:
   - Default
   - TransparentFX

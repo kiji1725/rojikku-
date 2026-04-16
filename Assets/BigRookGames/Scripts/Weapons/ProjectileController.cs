@@ -6,23 +6,23 @@ namespace BigRookGames.Weapons
 {
     public class ProjectileController : MonoBehaviour
     {
-        // --- Config ---
+        // 設定
         public float speed = 100;
         public LayerMask collisionLayerMask;
 
-        // --- Explosion VFX ---
+        // 爆発VFX
         public GameObject rocketExplosion;
 
-        // --- Projectile Mesh ---
+        // 発射体メッシュ
         public MeshRenderer projectileMesh;
 
-        // --- Script Variables ---
+        // スクリプト変数
         private bool targetHit;
 
-        // --- Audio ---
+        // 音
         public AudioSource inFlightAudioSource;
 
-        // --- VFX ---
+        // VFX
         public ParticleSystem disableOnHit;
 
         private void Start()
@@ -32,25 +32,25 @@ namespace BigRookGames.Weapons
 
         private void Update()
         {
-            // --- Check to see if the target has been hit. We don't want to update the position if the target was hit ---
+            // ターゲットがヒットしたかどうかを確認してください。ターゲットがヒットした場合は位置を更新したくありません
             if (targetHit) return;
 
-            // --- moves the game object in the forward direction at the defined speed ---
+            // ゲームオブジェクトを定義された速度で前方に移動させる
             transform.position += transform.forward * (speed * Time.deltaTime);
 
         }
 
 
         /// <summary>
-        /// Explodes on contact.
+        /// 接触すると爆発する。
         /// </summary>
         /// <param name="collision"></param>
         private void OnCollisionEnter(Collision collision)
         {
-            // --- return if not enabled because OnCollision is still called if compoenent is disabled ---
+            // コンポーネントが無効でも OnCollision は呼ばれるので、有効でない場合はリターンします
             if (!enabled) return;
 
-            // --- Explode when hitting an object and disable the projectile mesh ---
+            // 物体に当たったときに爆発し、弾丸のメッシュを無効にする
             Explode();
             projectileMesh.enabled = false;
             targetHit = true;
@@ -60,15 +60,11 @@ namespace BigRookGames.Weapons
                 col.enabled = false;
             }
             disableOnHit.Stop();
-
-
-            // --- Destroy this object after 2 seconds. Using a delay because the particle system needs to finish ---
-            // Destroy(gameObject, 5f);
         }
 
 
         /// <summary>
-        /// Instantiates an explode object.
+        /// 爆発オブジェクトをインスタンス化します。
         /// </summary>
         private void Explode()
         {
