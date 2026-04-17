@@ -53,7 +53,13 @@ public class BreakOnHit : MonoBehaviour
         foreach (Rigidbody rb in bodies)
         {
 
+<<<<<<< HEAD
             rb.gameObject.tag = "Break";
+=======
+
+            rb.gameObject.tag = "Break"; 
+
+>>>>>>> 23bdc443ae18af633208e0ab89b4955205343d77
 
             rb.isKinematic = false;
             rb.useGravity = true;
