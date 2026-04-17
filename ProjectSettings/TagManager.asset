@@ -9,7 +9,7 @@ TagManager:
   - Ammo
   - Bool
   - Bullet
-  - BREAK
+  - Break
   layers:
   - Default
   - TransparentFX
