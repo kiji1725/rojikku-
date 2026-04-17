@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ground
+  - out
+  - Ammo
+  - Bool
+  - Bullet
+  - BREAK
   layers:
   - Default
   - TransparentFX
