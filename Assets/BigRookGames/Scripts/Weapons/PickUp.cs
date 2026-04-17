@@ -6,6 +6,8 @@ public class PickUp : MonoBehaviour
     public int currentAmmo = 0;
     public int maxAmmo = 50;
 
+    public Animation Animation = null;
+
     // --- íeÇëùÇ‚Ç∑ ---
     public void AddAmmo(int amount)
     {
@@ -24,6 +26,13 @@ public class PickUp : MonoBehaviour
         {
             currentAmmo -= amount;
             return true;
+        }
+
+        if(Animation  != null)
+        {
+
+            Animation.Play();
+
         }
 
         return false;
