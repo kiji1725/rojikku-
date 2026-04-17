@@ -17,8 +17,9 @@ public class PlayerMotionController : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     public bool jumpFlag = false;
     public bool isGround = true;
-    public bool isSliding = false;
 
+    public bool isSliding = false;
+    // bool isADS = false;
 
 
     void Start()
@@ -87,6 +88,11 @@ public class PlayerMotionController : MonoBehaviour
 
     }
 
+
+    public bool IsSliding {  get { return isSliding; } }
+    // public bool IsADS { get { return isADS; } }
+
+
     // アニメーションのEventに使う関数
     public void SetRifleRun()
     {
@@ -96,13 +102,15 @@ public class PlayerMotionController : MonoBehaviour
     {
         isSliding = false;
     }
-
     public void IsJump()
     {
         jumpFlag = false;
     }
+    //public void IsADSOn()
+    //{
+    //    isADS = true;
+    //}
 
-    public bool IsSliding {  get { return isSliding; } }
 
 
 

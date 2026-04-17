@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 namespace BigRookGames.Weapons
 {
     public class GunfireController : MonoBehaviour
@@ -38,6 +39,12 @@ namespace BigRookGames.Weapons
         // 弾管理
         private PickUp playerAmmo;
 
+        // アニメーション管理
+        [SerializeField] private Animator animator;
+
+        
+        
+
         private void Start()
         {
             if(source != null) source.clip = GunShotClip;
@@ -45,6 +52,8 @@ namespace BigRookGames.Weapons
             lastScopeState = scopeActive;
 
             playerAmmo = GetComponentInParent<PickUp>();
+
+
         }
 
         private void Update()
