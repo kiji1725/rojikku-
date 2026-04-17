@@ -42,7 +42,7 @@ public class BreakOnHit : MonoBehaviour
     {
         isBroken = true;
 
-        gameObject.tag = "Ground";
+        gameObject.tag = "Break";
 
         // Å•TriggerÇæÇØñ≥å¯âªÅiîjï–ÇÕécÇ∑Åj
         if (parentCol != null)
@@ -53,11 +53,9 @@ public class BreakOnHit : MonoBehaviour
         foreach (Rigidbody rb in bodies)
         {
 
-<<<<<<< HEAD
-            rb.gameObject.tag = "BREAK"; 
-=======
-            rb.gameObject.tag = "Ground"; 
->>>>>>> 3d5151884a59e0c025a74e49a41f5c88832366dd
+
+            rb.gameObject.tag = "Break"; 
+
 
             rb.isKinematic = false;
             rb.useGravity = true;
