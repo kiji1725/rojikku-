@@ -59,7 +59,7 @@ namespace BigRookGames.Weapons
             // 前回の発射から遅延時間が経過していれば、武器を発射する
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (playerAmmo != null && playerAmmo.UseAmmo(1))
+                if (playerAmmo != null && playerAmmo.UseAmmo(1))// 弾を消費できる場合は発射
                 {
                     FireWeapon();
                 }
