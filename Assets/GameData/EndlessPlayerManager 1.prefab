@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2323818909870231267}
   - component: {fileID: 2291848795943842734}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: EndlessPlayerManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,9 +120,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4490302565791019165, guid: f26add0b8561051438426890f3bd0f19, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8613946288031661216}
     - targetCorrespondingSourceObject: {fileID: 1802767607664207933, guid: f26add0b8561051438426890f3bd0f19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2433502112356287391}
@@ -153,52 +150,9 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.190348, y: 0.32735416, z: 0.32735518}
   m_Center: {x: -0.006441772, y: -0.00000023817861, z: -0.00000038055555}
---- !u!82 &2505905682465869560 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4490302565791019162, guid: f26add0b8561051438426890f3bd0f19, type: 3}
-  m_PrefabInstance: {fileID: 2059835616547143266}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2505905682465869567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4490302565791019165, guid: f26add0b8561051438426890f3bd0f19, type: 3}
-  m_PrefabInstance: {fileID: 2059835616547143266}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8613946288031661216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2505905682465869567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 933e18ea02e20a1429dc3cdc3671dbc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BigRookGames::BigRookGames.Weapons.GunfireController
-  GunShotClip: {fileID: 8300000, guid: 40e71b0f7bd610849b40f150553f4702, type: 3}
-  ReloadClip: {fileID: 8300000, guid: c3430338b7987524d96ce1f63db280cd, type: 3}
-  source: {fileID: 2505905682465869560}
-  reloadSource: {fileID: 2505905682465869560}
-  audioPitch: {x: 0.9, y: 1.1}
-  muzzlePrefab: {fileID: 450044020708499364, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
-  muzzlePosition: {fileID: 3316806710145743124}
-  shotDelay: 4
-  rotate: 0
-  rotationSpeed: 0.25
-  scope: {fileID: 0}
-  scopeActive: 0
-  projectilePrefab: {fileID: 4092872357349286730, guid: 5269dd52fdc50ea429c6b6a65cc1161e, type: 3}
-  projectileToDisableOnFire: {fileID: 401583436908369503}
-  timeLastFired: 0
-  animator: {fileID: 0}
 --- !u!4 &2994070614852146245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3826672958807468583, guid: f26add0b8561051438426890f3bd0f19, type: 3}
-  m_PrefabInstance: {fileID: 2059835616547143266}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3316806710145743124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3643882368892340086, guid: f26add0b8561051438426890f3bd0f19, type: 3}
   m_PrefabInstance: {fileID: 2059835616547143266}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2560987588973277944
