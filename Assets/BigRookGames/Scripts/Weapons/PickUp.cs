@@ -28,12 +28,12 @@ public class PickUp : MonoBehaviour
             return true;
         }
 
-        if(Animation  != null)
-        {
+        //if(Animation  != null)
+        //{
 
-            Animation.Play();
+        //    Animation.Play();
 
-        }
+        //}
 
         return false;
     }
