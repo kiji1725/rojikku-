@@ -75,7 +75,13 @@ public class BreakOnHit : MonoBehaviour
                 continue;
             }
 
-            // ▼残す破片は物理を有効化
+            // ▼当たり判定を完全OFF（子階層含む）
+            foreach (Collider col in rb.GetComponentsInChildren<Collider>())
+            {
+                col.enabled = false;
+            }
+
+            // ▼物理を有効化
             rb.isKinematic = false;
             rb.useGravity = true;
 
