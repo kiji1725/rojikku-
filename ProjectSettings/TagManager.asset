@@ -10,6 +10,7 @@ TagManager:
   - Bool
   - Bullet
   - Break
+  - Wall
   layers:
   - Default
   - TransparentFX

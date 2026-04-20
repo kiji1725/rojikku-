@@ -15,6 +15,7 @@ public class PlayerMotionController : MonoBehaviour
     // ジャンプ用
     [SerializeField] private Rigidbody rb;
     [SerializeField] float jumpForce = 5f;
+    [SerializeField] float playerGravity = -15.0f;
     public bool jumpFlag = false;
     public bool isGround = true;
 
@@ -27,7 +28,16 @@ public class PlayerMotionController : MonoBehaviour
 
     }
 
-    
+    private void FixedUpdate()
+    {
+        // 毎フレーム重力をかける
+        if (!isGround)
+        {
+            rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
+        }
+    }
+
+
     void Update()
     {
 
@@ -68,7 +78,10 @@ public class PlayerMotionController : MonoBehaviour
     // ジャンプ
     void Jump()
     {
+        // 上方向の力
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        // プレイヤーの重力
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, playerGravity, rb.linearVelocity.z);
         isGround = false;
     }
 
