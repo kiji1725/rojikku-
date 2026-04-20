@@ -6,7 +6,7 @@ public class AngleChange : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    string GR = "GunRun";
+    // string GR = "GunRun";
 
     public float maxAngle = 90f;
     public float stepAngle = 45f;
@@ -21,8 +21,8 @@ public class AngleChange : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
 
-        if(Input.GetKeyDown(KeyCode.Space))
-            animator.SetTrigger(GR);
+        // if(Input.GetKeyDown(KeyCode.Space))
+        //     animator.SetTrigger(GR);
 
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
     }

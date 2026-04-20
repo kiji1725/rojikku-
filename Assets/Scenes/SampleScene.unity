@@ -271,7 +271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPush
   force: 500
   delay: 3
-  targets: []
+  targetTag: Bool
+  maxFragments: 8
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,13 +586,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 110542734541630139, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
+      propertyPath: remainRatio
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 110542734541630139, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
+      propertyPath: maxFragments
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 110542734541630139, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
       propertyPath: targets.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 110542734541630139, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
       propertyPath: 'targets.Array.data[0]'
       value: 
       objectReference: {fileID: 921842582}
+    - target: {fileID: 110542734541630139, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
+      propertyPath: 'targets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 921842582}
+    - target: {fileID: 110542734541630139, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
+      propertyPath: keepFragments.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2039142853703435209, guid: 92dcdd4af2966f148a6a90c2a61f75cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7053015

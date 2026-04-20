@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 827050147595321710}
   m_Layer: 0
   m_Name: Chunk14
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 7120979743934027844}
   m_Layer: 0
   m_Name: Chunk2_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 3699873431409404206}
   m_Layer: 0
   m_Name: Chunk13_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 2923328137822723726}
   m_Layer: 0
   m_Name: GluedBrick_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 2394550925942819299}
   m_Layer: 0
   m_Name: Chunk11_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 4733364521292867805}
   m_Layer: 0
   m_Name: Chunk7_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 2218123892371635688}
   m_Layer: 0
   m_Name: Chunk15_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 1018788553279039466}
   m_Layer: 0
   m_Name: Chunk15
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 5730038751511521085}
   m_Layer: 0
   m_Name: Chunk4_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 5782849631484189620}
   m_Layer: 0
   m_Name: Chunk5_7
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 8053946803936088910}
   m_Layer: 0
   m_Name: Chunk7_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 6762801325801159531}
   m_Layer: 0
   m_Name: DynamicBrick
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 8553329552861251834}
   m_Layer: 0
   m_Name: Chunk9_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 2694928713720352836}
   m_Layer: 0
   m_Name: Chunk14_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 4540285103131383059}
   m_Layer: 0
   m_Name: Chunk2_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 3377879326795360575}
   m_Layer: 0
   m_Name: Chunk1_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1647,7 +1647,7 @@ GameObject:
   - component: {fileID: 2155599997202324762}
   m_Layer: 0
   m_Name: Chunk13_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1759,7 +1759,7 @@ GameObject:
   - component: {fileID: 1212038080751261249}
   m_Layer: 0
   m_Name: Chunk5_8
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1871,7 +1871,7 @@ GameObject:
   - component: {fileID: 4372091875894842436}
   m_Layer: 0
   m_Name: Chunk1_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1983,7 +1983,7 @@ GameObject:
   - component: {fileID: 3570937942065458698}
   m_Layer: 0
   m_Name: Chunk15_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2095,7 +2095,7 @@ GameObject:
   - component: {fileID: 8780086986030523476}
   m_Layer: 0
   m_Name: Chunk4_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2207,7 +2207,7 @@ GameObject:
   - component: {fileID: 1600061851386691973}
   m_Layer: 0
   m_Name: Chunk16_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2319,7 +2319,7 @@ GameObject:
   - component: {fileID: 7587625825208326440}
   m_Layer: 0
   m_Name: GluedBrick_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2431,7 +2431,7 @@ GameObject:
   - component: {fileID: 1529819279524446774}
   m_Layer: 0
   m_Name: GluedBrick_8
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 2861686700133706782}
   m_Layer: 0
   m_Name: Chunk6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2606,7 +2606,7 @@ GameObject:
   - component: {fileID: 5399604487697429426}
   m_Layer: 0
   m_Name: Chunk10_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2718,7 +2718,7 @@ GameObject:
   - component: {fileID: 7771158456338577209}
   m_Layer: 0
   m_Name: Chunk11_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2828,7 +2828,7 @@ GameObject:
   - component: {fileID: 2951938647373561333}
   m_Layer: 0
   m_Name: Chunk3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2893,7 +2893,7 @@ GameObject:
   - component: {fileID: 3755806457368239529}
   m_Layer: 0
   m_Name: Chunk2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2960,7 +2960,7 @@ GameObject:
   - component: {fileID: 610746193811075356}
   m_Layer: 0
   m_Name: Chunk16_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3072,7 +3072,7 @@ GameObject:
   - component: {fileID: 4903023322730999460}
   m_Layer: 0
   m_Name: Chunk7_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3184,7 +3184,7 @@ GameObject:
   - component: {fileID: 7124362282731495869}
   m_Layer: 0
   m_Name: Chunk3_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3296,7 +3296,7 @@ GameObject:
   - component: {fileID: 6702103382557675626}
   m_Layer: 0
   m_Name: Chunk9_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3408,7 +3408,7 @@ GameObject:
   - component: {fileID: 2917420885951204593}
   m_Layer: 0
   m_Name: Chunk12_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3520,7 +3520,7 @@ GameObject:
   - component: {fileID: 5784169736699721319}
   m_Layer: 0
   m_Name: Chunk14_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3632,7 +3632,7 @@ GameObject:
   - component: {fileID: 6140037892581427419}
   m_Layer: 0
   m_Name: Chunk11_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3744,7 +3744,7 @@ GameObject:
   - component: {fileID: 5913124174822278044}
   m_Layer: 0
   m_Name: GluedBrick_10
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3856,7 +3856,7 @@ GameObject:
   - component: {fileID: 5898038655791354176}
   m_Layer: 0
   m_Name: Chunk10_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3968,7 +3968,7 @@ GameObject:
   - component: {fileID: 5821540629962147879}
   m_Layer: 0
   m_Name: Chunk9_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4078,7 +4078,7 @@ GameObject:
   - component: {fileID: 4245020353614896064}
   m_Layer: 0
   m_Name: Chunk5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4147,7 +4147,7 @@ GameObject:
   - component: {fileID: 2361111074606871480}
   m_Layer: 0
   m_Name: Chunk7_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4259,7 +4259,7 @@ GameObject:
   - component: {fileID: 7525887207426439788}
   m_Layer: 0
   m_Name: Chunk15_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4371,7 +4371,7 @@ GameObject:
   - component: {fileID: 1136999753199220486}
   m_Layer: 0
   m_Name: Chunk6_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4481,7 +4481,7 @@ GameObject:
   - component: {fileID: 7992652466271885264}
   m_Layer: 0
   m_Name: Chunk13
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4547,7 +4547,7 @@ GameObject:
   - component: {fileID: 8825063640126394771}
   m_Layer: 0
   m_Name: Chunk2_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4659,7 +4659,7 @@ GameObject:
   - component: {fileID: 4407558831670582659}
   m_Layer: 0
   m_Name: Chunk8_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4771,7 +4771,7 @@ GameObject:
   - component: {fileID: 4628326164052677116}
   m_Layer: 0
   m_Name: GluedBrick_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4883,7 +4883,7 @@ GameObject:
   - component: {fileID: 4402191072886424932}
   m_Layer: 0
   m_Name: Chunk10_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4993,7 +4993,7 @@ GameObject:
   - component: {fileID: 7554914655746222479}
   m_Layer: 0
   m_Name: Chunk4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5061,7 +5061,7 @@ GameObject:
   - component: {fileID: 3802742476531138582}
   m_Layer: 0
   m_Name: Chunk3_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5171,7 +5171,7 @@ GameObject:
   - component: {fileID: 1165356041805007393}
   m_Layer: 0
   m_Name: Chunk8
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5237,7 +5237,7 @@ GameObject:
   - component: {fileID: 6071247291575358829}
   m_Layer: 0
   m_Name: GluedBrick_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5349,7 +5349,7 @@ GameObject:
   - component: {fileID: 9089157857461069627}
   m_Layer: 0
   m_Name: Chunk3_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5461,7 +5461,7 @@ GameObject:
   - component: {fileID: 5196400639468798969}
   m_Layer: 0
   m_Name: Chunk5_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5573,7 +5573,7 @@ GameObject:
   - component: {fileID: 946312407333244981}
   m_Layer: 0
   m_Name: GluedBrick_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5685,7 +5685,7 @@ GameObject:
   - component: {fileID: 8928008299237879822}
   m_Layer: 0
   m_Name: Chunk1_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5797,7 +5797,7 @@ GameObject:
   - component: {fileID: 6173455168052655354}
   m_Layer: 0
   m_Name: Chunk13_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5907,7 +5907,7 @@ GameObject:
   - component: {fileID: 2595008022184035165}
   m_Layer: 0
   m_Name: Chunk11
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5974,7 +5974,7 @@ GameObject:
   - component: {fileID: 5750158141009605427}
   m_Layer: 0
   m_Name: Chunk6_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6086,7 +6086,7 @@ GameObject:
   - component: {fileID: 1163377220309915796}
   m_Layer: 0
   m_Name: Chunk4_7
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6198,7 +6198,7 @@ GameObject:
   - component: {fileID: 6234362784036821401}
   m_Layer: 0
   m_Name: Chunk12_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6310,7 +6310,7 @@ GameObject:
   - component: {fileID: 4101001008291862492}
   m_Layer: 0
   m_Name: Chunk16_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6422,7 +6422,7 @@ GameObject:
   - component: {fileID: 9164000241928081011}
   m_Layer: 0
   m_Name: Chunk16_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6532,7 +6532,7 @@ GameObject:
   - component: {fileID: 5246116068394732362}
   m_Layer: 0
   m_Name: Chunk9
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6599,7 +6599,7 @@ GameObject:
   - component: {fileID: 5169401510811244742}
   m_Layer: 0
   m_Name: Chunk3_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6711,7 +6711,7 @@ GameObject:
   - component: {fileID: 8135388289168029036}
   m_Layer: 0
   m_Name: Chunk2_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6821,7 +6821,7 @@ GameObject:
   - component: {fileID: 2287699024481862208}
   m_Layer: 0
   m_Name: Chunk16
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6886,7 +6886,7 @@ GameObject:
   - component: {fileID: 3634279484972357958}
   m_Layer: 0
   m_Name: Chunk12_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6998,7 +6998,7 @@ GameObject:
   - component: {fileID: 8530184679032477706}
   m_Layer: 0
   m_Name: Chunk11_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7110,7 +7110,7 @@ GameObject:
   - component: {fileID: 5800552127413958083}
   m_Layer: 0
   m_Name: Chunk8_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7220,7 +7220,7 @@ GameObject:
   - component: {fileID: 712930632138938287}
   m_Layer: 0
   m_Name: Chunk12
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7285,7 +7285,7 @@ GameObject:
   - component: {fileID: 2839954715066858584}
   m_Layer: 0
   m_Name: Chunk5_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7397,7 +7397,7 @@ GameObject:
   - component: {fileID: 8521230744322554576}
   m_Layer: 0
   m_Name: Chunk3_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7509,7 +7509,7 @@ GameObject:
   - component: {fileID: 3028337978669222479}
   m_Layer: 0
   m_Name: Chunk9_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7621,7 +7621,7 @@ GameObject:
   - component: {fileID: 9084504587832274822}
   m_Layer: 0
   m_Name: Chunk1_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7733,7 +7733,7 @@ GameObject:
   - component: {fileID: 8345497406678608831}
   m_Layer: 0
   m_Name: Chunk14_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7845,7 +7845,7 @@ GameObject:
   - component: {fileID: 7798131102768064051}
   m_Layer: 0
   m_Name: Chunk3_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7957,7 +7957,7 @@ GameObject:
   - component: {fileID: 3781250277490691076}
   m_Layer: 0
   m_Name: Chunk13_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8066,7 +8066,7 @@ GameObject:
   - component: {fileID: 2039142853703435209}
   - component: {fileID: 4450783628533137608}
   - component: {fileID: 110542734541630139}
-  - component: {fileID: 1684578106560729400}
+  - component: {fileID: -5731298510966385356}
   m_Layer: 0
   m_Name: Wall3
   m_TagString: Untagged
@@ -8133,10 +8133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WallBreak
   force: 500
-  delay: 3
-  targets:
-  - {fileID: 0}
---- !u!65 &1684578106560729400
+  delay: 0.5
+  targetTag: Untagged
+--- !u!65 &-5731298510966385356
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8171,7 +8170,7 @@ GameObject:
   - component: {fileID: 7797741330597859429}
   m_Layer: 0
   m_Name: GluedBrick_9
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8283,7 +8282,7 @@ GameObject:
   - component: {fileID: 7482666189954251369}
   m_Layer: 0
   m_Name: Chunk11_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8395,7 +8394,7 @@ GameObject:
   - component: {fileID: 7021900698484502831}
   m_Layer: 0
   m_Name: Chunk5_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8507,7 +8506,7 @@ GameObject:
   - component: {fileID: 3169737482757573786}
   m_Layer: 0
   m_Name: Chunk15_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8619,7 +8618,7 @@ GameObject:
   - component: {fileID: 4632931236024493408}
   m_Layer: 0
   m_Name: Chunk9_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8729,7 +8728,7 @@ GameObject:
   - component: {fileID: 6341719735281501716}
   m_Layer: 0
   m_Name: Chunk7
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8795,7 +8794,7 @@ GameObject:
   - component: {fileID: 7609565703817988791}
   m_Layer: 0
   m_Name: Chunk11_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8907,7 +8906,7 @@ GameObject:
   - component: {fileID: 1814038089321661272}
   m_Layer: 0
   m_Name: Chunk8_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9019,7 +9018,7 @@ GameObject:
   - component: {fileID: 7635599488672300646}
   m_Layer: 0
   m_Name: Chunk1_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9131,7 +9130,7 @@ GameObject:
   - component: {fileID: 5248898351797818694}
   m_Layer: 0
   m_Name: Chunk13_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9243,7 +9242,7 @@ GameObject:
   - component: {fileID: 2676942572692232818}
   m_Layer: 0
   m_Name: Chunk5_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9355,7 +9354,7 @@ GameObject:
   - component: {fileID: 2287621222172389577}
   m_Layer: 0
   m_Name: Chunk2_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9465,7 +9464,7 @@ GameObject:
   - component: {fileID: 1002096775842279680}
   m_Layer: 0
   m_Name: Chunk10
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9532,7 +9531,7 @@ GameObject:
   - component: {fileID: 7766637658156012842}
   m_Layer: 0
   m_Name: Post_L
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9644,7 +9643,7 @@ GameObject:
   - component: {fileID: 1590365328302838350}
   m_Layer: 0
   m_Name: Chunk5_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9756,7 +9755,7 @@ GameObject:
   - component: {fileID: 1369824979764665395}
   m_Layer: 0
   m_Name: GluedBrick_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9868,7 +9867,7 @@ GameObject:
   - component: {fileID: 5222799675572997734}
   m_Layer: 0
   m_Name: Chunk9_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9980,7 +9979,7 @@ GameObject:
   - component: {fileID: 5300518665832122410}
   m_Layer: 0
   m_Name: Chunk4_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10092,7 +10091,7 @@ GameObject:
   - component: {fileID: 5612948732130483056}
   m_Layer: 0
   m_Name: Chunk10_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10204,7 +10203,7 @@ GameObject:
   - component: {fileID: 7043837408781603338}
   m_Layer: 0
   m_Name: Chunk15_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10316,7 +10315,7 @@ GameObject:
   - component: {fileID: 3629253038237071730}
   m_Layer: 0
   m_Name: Chunk4_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10428,7 +10427,7 @@ GameObject:
   - component: {fileID: 6236308409694535204}
   m_Layer: 0
   m_Name: Chunk15_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10540,7 +10539,7 @@ GameObject:
   - component: {fileID: 9077880065185764072}
   m_Layer: 0
   m_Name: Chunk7_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10652,7 +10651,7 @@ GameObject:
   - component: {fileID: 3940326321544223538}
   m_Layer: 0
   m_Name: GluedBrick_7
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10764,7 +10763,7 @@ GameObject:
   - component: {fileID: 7804830686697520375}
   m_Layer: 0
   m_Name: Chunk12_1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10876,7 +10875,7 @@ GameObject:
   - component: {fileID: 2370271946291178878}
   m_Layer: 0
   m_Name: Chunk6_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10988,7 +10987,7 @@ GameObject:
   - component: {fileID: 6879819459525204301}
   m_Layer: 0
   m_Name: GluedBrick_12
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11100,7 +11099,7 @@ GameObject:
   - component: {fileID: 1955947468131936662}
   m_Layer: 0
   m_Name: Chunk2_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11212,7 +11211,7 @@ GameObject:
   - component: {fileID: 3090489289596647566}
   m_Layer: 0
   m_Name: Chunk5_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11324,7 +11323,7 @@ GameObject:
   - component: {fileID: 2156708205712949095}
   m_Layer: 0
   m_Name: Chunk14_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11436,7 +11435,7 @@ GameObject:
   - component: {fileID: 453672006064299933}
   m_Layer: 0
   m_Name: Chunk14_6
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11548,7 +11547,7 @@ GameObject:
   - component: {fileID: 1313072865668075246}
   m_Layer: 0
   m_Name: Chunk6_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11657,7 +11656,7 @@ GameObject:
   - component: {fileID: 3849930234361532135}
   m_Layer: 0
   m_Name: GluedBrick
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11703,7 +11702,7 @@ GameObject:
   - component: {fileID: 5510439745825126906}
   m_Layer: 0
   m_Name: Post_R
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11815,7 +11814,7 @@ GameObject:
   - component: {fileID: 2207476161234073143}
   m_Layer: 0
   m_Name: Chunk1_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11927,7 +11926,7 @@ GameObject:
   - component: {fileID: 1992136151685678839}
   m_Layer: 0
   m_Name: Chunk10_2
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12039,7 +12038,7 @@ GameObject:
   - component: {fileID: 4087856671717431173}
   m_Layer: 0
   m_Name: Chunk4_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12151,7 +12150,7 @@ GameObject:
   - component: {fileID: 68117215344690932}
   m_Layer: 0
   m_Name: Chunk14_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12263,7 +12262,7 @@ GameObject:
   - component: {fileID: 961465753507988123}
   m_Layer: 0
   m_Name: Chunk4_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12375,7 +12374,7 @@ GameObject:
   - component: {fileID: 580988643199563671}
   m_Layer: 0
   m_Name: Chunk8_3
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12487,7 +12486,7 @@ GameObject:
   - component: {fileID: 782912137470034135}
   m_Layer: 0
   m_Name: Chunk10_5
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12597,7 +12596,7 @@ GameObject:
   - component: {fileID: 5344236271595988930}
   m_Layer: 0
   m_Name: Chunk1
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12664,7 +12663,7 @@ GameObject:
   - component: {fileID: 1515936212509167289}
   m_Layer: 0
   m_Name: Chunk8_4
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12776,7 +12775,7 @@ GameObject:
   - component: {fileID: 1315006578409686534}
   m_Layer: 0
   m_Name: GluedBrick_11
-  m_TagString: Untagged
+  m_TagString: out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
