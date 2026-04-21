@@ -77,7 +77,7 @@ public class PlayerMotionController : MonoBehaviour
     void Jump()
     {
         // 上方向の力
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         // プレイヤーの重力
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, playerGravity, rb.linearVelocity.z);
         isGround = false;
