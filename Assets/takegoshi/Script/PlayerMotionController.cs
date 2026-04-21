@@ -16,12 +16,13 @@ public class PlayerMotionController : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float playerGravity = -15.0f;
-    public bool jumpFlag = false;
-    public bool isGround = true;
+    bool jumpFlag = false;
+    bool isGround = true;
 
     public bool isSliding = false;
     // bool isADS = false;
 
+    [SerializeField] private AngleChange angleChange;
 
     void Start()
     {
@@ -40,30 +41,24 @@ public class PlayerMotionController : MonoBehaviour
 
     void Update()
     {
-
+        // ADS右クリック長押し あんま使わない
         if (Input.GetMouseButtonDown(1))
         {
-
-            //Debug.Log("on");
             PlayerAnimator.SetTrigger(ads);
         }
         if (Input.GetMouseButtonUp(1))
         {
-            //Debug.Log("off");
             PlayerAnimator.SetTrigger(run);
         }
-        // スライディング↓orSキー
-        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) 
-            && !jumpFlag && !isSliding)
-        {
 
+        // スライディング↓orSキー
+        if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding) && angleChange.CurrentZ == 0 )
+        {
             isSliding = true;
             PlayerAnimator.SetTrigger(slide);
-
-            
         }
         // ジャンプ↑orWキー
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && (!jumpFlag))
+        if ( ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && (!jumpFlag)) && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
         {
             jumpFlag = true;
             PlayerAnimator.SetTrigger(jump);
@@ -71,15 +66,18 @@ public class PlayerMotionController : MonoBehaviour
 
         }
 
+        
 
 
     }
+
+
 
     // ジャンプ
     void Jump()
     {
         // 上方向の力
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         // プレイヤーの重力
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, playerGravity, rb.linearVelocity.z);
         isGround = false;
@@ -103,7 +101,8 @@ public class PlayerMotionController : MonoBehaviour
 
 
     public bool IsSliding {  get { return isSliding; } }
-    // public bool IsADS { get { return isADS; } }
+    // ジャンプ中に左右移動させないため
+    public bool JumpFlag { get { return jumpFlag; } }
 
 
     // アニメーションのEventに使う関数
