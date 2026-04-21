@@ -9,6 +9,8 @@ public class PlayerMoveTest : MonoBehaviour
     float moveX = 0.0f;
     float moveZ = 0.0f;
 
+    
+
     Vector3 move;
 
     void Start()
@@ -36,6 +38,12 @@ public class PlayerMoveTest : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver 1");
         }
+
+        // Gravityを入れてないとジャンプすると飛んで行ってしまうので、
+        // ジャンプした時だけ落ちるようにする。
+        
+
+
 
     }
 

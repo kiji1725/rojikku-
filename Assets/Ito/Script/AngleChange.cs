@@ -26,10 +26,7 @@ public class AngleChange : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
     
-        if (currentZ == maxAngle)
-        {
-
-        }
+        // •Ç‚Ì–â‘è‚ª‰ðŒˆ‚µ‚½‚çRaycast‚Å”»’è‚µ‚Ä•Ç‚ª‚ ‚é‚Æ‚±‚ë‚¾‚¯‘–‚ê‚é‚æ‚¤‚É‚·‚é
         
 
 
