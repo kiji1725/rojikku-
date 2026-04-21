@@ -5,11 +5,12 @@ using UnityEngine;
 public class AngleChange : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private PlayerMotionController motionController;
 
     // string GR = "GunRun";
 
-    public float maxAngle = 90f;
-    public float stepAngle = 45f;
+    public const float maxAngle = 90f;
+    public const float stepAngle = 45f;
 
     
     float currentZ = 0f;
@@ -17,10 +18,10 @@ public class AngleChange : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !motionController.JumpFlag)
         currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !motionController.JumpFlag)
         currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
 
 
@@ -29,8 +30,11 @@ public class AngleChange : MonoBehaviour
         // •Ç‚Ì–â‘è‚ª‰ðŒˆ‚µ‚½‚çRaycast‚Å”»’è‚µ‚Ä•Ç‚ª‚ ‚é‚Æ‚±‚ë‚¾‚¯‘–‚ê‚é‚æ‚¤‚É‚·‚é
         
 
-
-        
     
     }
+
+    public float CurrentZ { get { return currentZ; } }
+
+
+
 }
