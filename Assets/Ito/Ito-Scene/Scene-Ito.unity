@@ -256,6 +256,11 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &272874334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3643882368892340086, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+  m_PrefabInstance: {fileID: 1087000221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &458636004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
@@ -407,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3643882369342148042, guid: f26add0b8561051438426890f3bd0f19, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3826672958807468583, guid: f26add0b8561051438426890f3bd0f19, type: 3}
       propertyPath: m_LocalScale.x
@@ -468,8 +473,21 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4490302565791019165, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1747603251}
   m_SourcePrefab: {fileID: 100100000, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+--- !u!1 &1363041948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1802767607664207933, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+  m_PrefabInstance: {fileID: 1087000221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1411067029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4490302565791019165, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+  m_PrefabInstance: {fileID: 1087000221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1499020515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 537239363553487783, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
@@ -514,6 +532,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826672958807468583, guid: f26add0b8561051438426890f3bd0f19, type: 3}
   m_PrefabInstance: {fileID: 1087000221}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1747603247 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4490302565791019162, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+  m_PrefabInstance: {fileID: 1087000221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1747603251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411067029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd4597b0f2a3924fa4e5742dd28e5e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BigRookGames::BigRookGames.Weapons.Endless
+  GunShotClip: {fileID: 8300000, guid: 40e71b0f7bd610849b40f150553f4702, type: 3}
+  ReloadClip: {fileID: 8300000, guid: c3430338b7987524d96ce1f63db280cd, type: 3}
+  source: {fileID: 1747603247}
+  reloadSource: {fileID: 1747603247}
+  audioPitch: {x: 0.9, y: 1.1}
+  muzzlePrefab: {fileID: 450044020708499364, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+  muzzlePosition: {fileID: 272874334}
+  shotDelay: 4
+  rotate: 0
+  rotationSpeed: 0.25
+  scope: {fileID: 0}
+  scopeActive: 1
+  projectilePrefab: {fileID: 4092872357349286730, guid: 5269dd52fdc50ea429c6b6a65cc1161e, type: 3}
+  projectileToDisableOnFire: {fileID: 1363041948}
+  timeLastFired: 0
 --- !u!1001 &1760327374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -591,13 +641,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000404284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af2bf9c6c8d12bd44bab46a8bf650817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: BigRookGames::PickUp
   currentAmmo: 0
   maxAmmo: 50
+  Animation: {fileID: 0}
+--- !u!114 &2000404289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000404284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653493ba79940d146b42c01af824bd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BigRookGames::EndlessGun
+  currentAmmo: 1
+  maxAmmo: 3
 --- !u!1 &2035043016
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +769,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5878469160296231389, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878469160296231389, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
@@ -717,6 +786,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 882557051375857949, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2000404288}
+    - targetCorrespondingSourceObject: {fileID: 882557051375857949, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2000404289}
   m_SourcePrefab: {fileID: 100100000, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
