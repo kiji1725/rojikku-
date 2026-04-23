@@ -39,10 +39,6 @@ public class PlayerMoveTest : MonoBehaviour
             SceneManager.LoadScene("GameOver 1");
         }
 
-        // Gravityを入れてないとジャンプすると飛んで行ってしまうので、
-        // ジャンプした時だけ落ちるようにする。
-        
-
 
 
     }
