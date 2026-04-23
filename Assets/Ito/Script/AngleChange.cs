@@ -31,6 +31,7 @@ public class AngleChange : MonoBehaviour
 
         // 目標のZ軸の角度に向かって現在のZ軸の角度を徐々に変える
         currentZ = Mathf.Lerp(currentZ, targetZ, Time.deltaTime * rotateSpeed);
+
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
 
         // 壁の問題が解決したらRaycastで判定して壁があるところだけ走れるようにする
