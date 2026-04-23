@@ -18,7 +18,7 @@ public class PlayerMotionController : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float playerGravity = -15.0f;
     bool jumpFlag = false;
-    bool isGround = false;
+    public bool isGround = false;
 
     public bool isSliding = false;
     // bool isADS = false;
