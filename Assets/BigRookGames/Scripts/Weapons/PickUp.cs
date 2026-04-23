@@ -22,8 +22,11 @@ public class PickUp : MonoBehaviour
     // --- ’e‚ðŽg‚¤ ---
     public bool UseAmmo(int amount)
     {
+
         if (currentAmmo >= amount)
         {
+
+            Debug.Log("a: ");
             currentAmmo -= amount;
             return true;
         }
