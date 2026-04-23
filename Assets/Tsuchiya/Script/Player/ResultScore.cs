@@ -16,6 +16,7 @@ public class ResultScore : MonoBehaviour
         if (resultText != null)
         {
             int score = ScoreManager.instance.GetScore();
+
             resultText.text = "Score : " + score;
         }
     }

@@ -39,4 +39,6 @@ public class PlayerMove : MonoBehaviour
 
     }
     
+    public Vector3 PlayerPos { get { return transform.position; } }
+
 }
