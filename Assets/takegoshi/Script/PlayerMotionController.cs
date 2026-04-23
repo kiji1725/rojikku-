@@ -17,7 +17,7 @@ public class PlayerMotionController : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float playerGravity = -15.0f;
     bool jumpFlag = false;
-    bool isGround = false;
+    public bool isGround = false;
 
     public bool isSliding = false;
     // bool isADS = false;
@@ -91,10 +91,14 @@ public class PlayerMotionController : MonoBehaviour
         {
             isGround = true;
         }
-        if (!collision.gameObject.CompareTag("Ground"))
+        
+        // óéÇøÇÈè∞
+        if (collision.gameObject.CompareTag("FF"))
         {
             isGround = false;
         }
+
+        
 
         if (collision.gameObject.CompareTag("out"))
         {
