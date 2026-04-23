@@ -12,7 +12,7 @@ public class Title : MonoBehaviour
 
         public void StageSelect(){
 
-        SceneManager.LoadScene("StageSelect");
+        SceneManager.LoadScene("StageSelect 1");
 
 
         }

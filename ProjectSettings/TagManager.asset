@@ -11,6 +11,7 @@ TagManager:
   - Bullet
   - Break
   - Wall
+  - FF
   layers:
   - Default
   - TransparentFX

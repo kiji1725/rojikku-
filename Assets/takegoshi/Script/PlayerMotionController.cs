@@ -91,16 +91,28 @@ public class PlayerMotionController : MonoBehaviour
         {
             isGround = true;
         }
-        if (!collision.gameObject.CompareTag("Ground"))
+        
+        // óéÇøÇÈè∞
+        if (collision.gameObject.CompareTag("test_trap"))
         {
             isGround = false;
         }
+
+        
 
         if (collision.gameObject.CompareTag("out"))
         {
             SceneManager.LoadScene("GameOver 1");
         }
 
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGround = false;
+        }
     }
 
 
