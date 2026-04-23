@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerMotionController : MonoBehaviour
 {
@@ -58,21 +59,17 @@ public class PlayerMotionController : MonoBehaviour
             PlayerAnimator.SetTrigger(slide);
         }
         // ジャンプ↑orWキー
-        if ( ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && (!jumpFlag)) && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
+        if ( ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding) && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
         {
+
             jumpFlag = true;
             PlayerAnimator.SetTrigger(jump);
             Jump();
 
         }
 
-        
-
-
     }
-
-
-
+    
     // ジャンプ
     void Jump()
     {
@@ -93,12 +90,10 @@ public class PlayerMotionController : MonoBehaviour
         }
         
         // 落ちる床
-        if (collision.gameObject.CompareTag("test_trap"))
+        if (collision.gameObject.CompareTag("FF"))
         {
             isGround = false;
         }
-
-        
 
         if (collision.gameObject.CompareTag("out"))
         {
@@ -109,6 +104,9 @@ public class PlayerMotionController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+        // アングルが90のときは即時リターン
+        if (angleChange.CurrentZ == 90) return;
+        // グランドから離れたら重力を加算
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGround = false;
