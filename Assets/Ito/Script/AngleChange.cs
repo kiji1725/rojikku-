@@ -23,14 +23,22 @@ public class AngleChange : MonoBehaviour
     {
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !motionController.JumpFlag)
-        currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
+        targetZ = Mathf.Min(targetZ + stepAngle, maxAngle);
 
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !motionController.JumpFlag)
-        currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
+        targetZ = Mathf.Max(targetZ - stepAngle, -maxAngle);
 
         // 目標のZ軸の角度に向かって現在のZ軸の角度を徐々に変える
-        currentZ = Mathf.Lerp(currentZ, targetZ, Time.deltaTime * rotateSpeed);
+        currentZ = Mathf.MoveTowards(currentZ, targetZ, rotateSpeed * Time.deltaTime);
+
+        /*
+        if (Mathf.Abs(currentZ - targetZ) < 0.1f)
+        {
+            currentZ = targetZ;
+        }
+         */
+
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
 
         // 壁の問題が解決したらRaycastで判定して壁があるところだけ走れるようにする
@@ -40,5 +48,6 @@ public class AngleChange : MonoBehaviour
     }
 
     // 現在のZ軸の角度を取得するプロパティ
-    public float CurrentZ { get { return currentZ; } }
+    public float CurrentZ => currentZ;
+    // { get { return currentZ; } }
 }
