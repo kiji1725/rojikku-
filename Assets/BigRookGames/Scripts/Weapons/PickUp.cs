@@ -25,8 +25,6 @@ public class PickUp : MonoBehaviour
 
         if (currentAmmo >= amount)
         {
-
-            Debug.Log("a: ");
             currentAmmo -= amount;
             return true;
         }
