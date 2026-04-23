@@ -384,6 +384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa40e49f1483a84694d455baa23a3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Score
+  scoreText: {fileID: 0}
+  scoreMultiplier: 1.5
+  countSpeed: 200
 --- !u!114 &684527714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +417,7 @@ MonoBehaviour:
   rb: {fileID: 684527712}
   jumpForce: 23
   playerGravity: -15
+  isGround: 0
   isSliding: 0
   angleChange: {fileID: 799253743}
 --- !u!114 &684527716
@@ -902,7 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff5e9ba448cd61438628100b1a11d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rayDistance: 100
+  rayDistance: 1
 --- !u!65 &888182560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1596,7 +1600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1028c0c7ac28b74baedfe9b4d1c6872, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3.379
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1028c0c7ac28b74baedfe9b4d1c6872, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1695,7 +1699,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 273187500449040905, guid: c7833f97eb1320340ad77daffbb9a697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.71
+      value: -13.76
       objectReference: {fileID: 0}
     - target: {fileID: 273187500449040905, guid: c7833f97eb1320340ad77daffbb9a697, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1732,6 +1736,10 @@ PrefabInstance:
     - target: {fileID: 273187500449040905, guid: c7833f97eb1320340ad77daffbb9a697, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377472622493743171, guid: c7833f97eb1320340ad77daffbb9a697, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.17
       objectReference: {fileID: 0}
     - target: {fileID: 6334939766429090168, guid: c7833f97eb1320340ad77daffbb9a697, type: 3}
       propertyPath: m_Name
