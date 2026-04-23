@@ -10,7 +10,8 @@ public class Raycast : MonoBehaviour
     public float rayPosY = 0.0f;
 
 
-    
+    bool hitWallRight = false;
+    bool hitWallLeft = false;
 
     bool wallRun = false;
 
@@ -46,6 +47,7 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
+            hitWallRight = true;
             Debug.Log("右");
             Debug.Log("当たった相手: " + hitRight.collider.name);
             Debug.Log("当たった場所 : " + hitRight.point);
@@ -55,26 +57,33 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
+            hitWallLeft = true;
             Debug.Log("左");
             Debug.Log("当たった相手: " + hitLeft.collider.name);
             Debug.Log("当たった場所 : " + hitLeft.point);
 
         }
 
-
-        if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
+        // 右
+        if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
+            //Debug.Log("ヒットまでの距離: " + hit.distance);
+            hitWallRight = true;
             Debug.Log("当たってない");
         }
+        // 左
+        if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
+        {
+            hitWallLeft = false;
+            Debug.Log("当たってない");
+        }
+            
+
 
         // 赤い線と青い線を描画
         Debug.DrawRay(ray.origin, leftFront * rayDistance, Color.red);
         Debug.DrawRay(ray.origin, rightFront * rayDistance, Color.blue);
 
-        //if ()
-        //{
-
-        //}
 
 
     }// update
