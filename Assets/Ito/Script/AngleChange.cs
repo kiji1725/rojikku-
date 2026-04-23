@@ -23,21 +23,14 @@ public class AngleChange : MonoBehaviour
     {
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !motionController.JumpFlag)
-        targetZ = Mathf.Min(targetZ + stepAngle, maxAngle);
+        currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
 
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !motionController.JumpFlag)
-        targetZ = Mathf.Max(targetZ - stepAngle, -maxAngle);
+        currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
 
         // 目標のZ軸の角度に向かって現在のZ軸の角度を徐々に変える
-        currentZ = Mathf.MoveTowards(currentZ, targetZ, rotateSpeed * Time.deltaTime);
-
-        /*
-        if (Mathf.Abs(currentZ - targetZ) < 0.1f)
-        {
-            currentZ = targetZ;
-        }
-         */
+        currentZ = Mathf.Lerp(currentZ, targetZ, Time.deltaTime * rotateSpeed);
 
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
 
@@ -48,6 +41,5 @@ public class AngleChange : MonoBehaviour
     }
 
     // 現在のZ軸の角度を取得するプロパティ
-    public float CurrentZ => currentZ;
-    // { get { return currentZ; } }
+    public float CurrentZ { get { return currentZ; } }
 }
