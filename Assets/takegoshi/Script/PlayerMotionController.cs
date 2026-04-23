@@ -91,6 +91,10 @@ public class PlayerMotionController : MonoBehaviour
         {
             isGround = true;
         }
+        if (!collision.gameObject.CompareTag("Ground"))
+        {
+            isGround = false;
+        }
 
         if (collision.gameObject.CompareTag("out"))
         {
