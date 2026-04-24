@@ -75,9 +75,19 @@ public class ResultScore : MonoBehaviour
 
     string GetRank(int score)
     {
-        if (score >= 1000) return "S";
-        if (score >= 700) return "A";
-        if (score >= 400) return "B";
-        return "C";
+        if (score >= 3000) return "SSS+";
+        if (score >= 2600) return "SSS";
+        if (score >= 2300) return "SS+";
+        if (score >= 2000) return "SS";
+        if (score >= 1700) return "S+";
+        if (score >= 1400) return "S";
+        if (score >= 1200) return "A+";
+        if (score >= 1000) return "A";
+        if (score >= 800) return "B+";
+        if (score >= 600) return "B";
+        if (score >= 500) return "C+";
+        if (score >= 400) return "C";
+        if (score >= 300) return "D";
+        return "E";
     }
 }

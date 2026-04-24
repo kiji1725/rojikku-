@@ -4852,6 +4852,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6844135706572835, guid: cc960f9d073bc0845b4b0363b4116e10, type: 3}
   m_PrefabInstance: {fileID: 809616311}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1760374818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1760374819}
+  - component: {fileID: 1760374820}
+  m_Layer: 0
+  m_Name: SideObjectSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1760374819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760374818}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.57, y: -0.14, z: -11.91373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1777147424}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1760374820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760374818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf89a63ebf704114082d03049374ad7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SideObjectSpawner
+  sidePrefabs:
+  - {fileID: 8155121013631119512, guid: 4a3cb57f390b4bc4994c6ec9cc4e8817, type: 3}
+  - {fileID: 8339124408164274804, guid: 7c000dbe512791f459516f360d377006, type: 3}
+  - {fileID: 701231919874327521, guid: 94a60d0d67c8eee489a864bd82b3e6d6, type: 3}
+  - {fileID: 110326403691620806, guid: 8043d21e6e548cb45b3e038cd9f7a8d7, type: 3}
+  sideOffset: 20
+  zRandomRange: 2
+  spawnChance: 1
 --- !u!1 &1777147423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4883,6 +4935,7 @@ Transform:
   m_Children:
   - {fileID: 1850117852}
   - {fileID: 80574251}
+  - {fileID: 1760374819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1841933061
@@ -5041,6 +5094,7 @@ MonoBehaviour:
   aheadCount: 20
   floorLength: 15
   deleteDistance: 20
+  sideSpawner: {fileID: 1760374820}
 --- !u!4 &1874508381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1213585064213224452, guid: d1028c0c7ac28b74baedfe9b4d1c6872, type: 3}

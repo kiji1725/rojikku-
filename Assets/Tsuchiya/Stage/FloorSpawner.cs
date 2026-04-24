@@ -15,94 +15,72 @@ public class FloorSpawner : MonoBehaviour
     public int startSpawnCount = 5;
     public int aheadCount = 7;
     public float floorLength = 10f;
+
+    [Header("削除距離")]
     public float deleteDistance = 30f;
 
-    private float nextZ;
-    private Queue<GameObject> floors = new Queue<GameObject>();
-    private int startIndex = 0;
+    [Header("風景生成")]
+    public SideObjectSpawner sideSpawner;
 
-    // ★ デバッグ用
-    private int totalSpawned = 0;
+    private Queue<GameObject> floors = new Queue<GameObject>();
+    private float nextZ = 0f;
 
     void Start()
     {
-        nextZ = transform.position.z;
-        InitialSpawn();
+        for (int i = 0; i < startSpawnCount; i++)
+        {
+            SpawnStartFloor();
+        }
+
+        for (int i = 0; i < aheadCount; i++)
+        {
+            SpawnRandomFloor();
+        }
     }
 
     void Update()
     {
-        SpawnCheck();
-        DeleteCheck();
-
-        // ★ 毎フレーム表示（軽くしたいなら消してOK）
-        Debug.Log($"現在の床数: {floors.Count} / 累計生成: {totalSpawned}");
-    }
-
-    void InitialSpawn()
-    {
-        for (int i = 0; i < startSpawnCount; i++)
+        if (player.position.z + (aheadCount * floorLength) > nextZ)
         {
-            SpawnFloor();
+            SpawnRandomFloor();
+        }
+
+        if (floors.Count > 0)
+        {
+            GameObject first = floors.Peek();
+
+            if (player.position.z - first.transform.position.z > deleteDistance)
+            {
+                Destroy(floors.Dequeue()); // 子も一緒に消える
+            }
         }
     }
 
-    void SpawnCheck()
+    void SpawnStartFloor()
     {
-        float distanceAhead = aheadCount * floorLength;
-
-        if (player.position.z + distanceAhead > nextZ)
-        {
-            SpawnFloor();
-        }
+        GameObject prefab = startPrefabs[Random.Range(0, startPrefabs.Length)];
+        Spawn(prefab);
     }
 
-    void SpawnFloor()
+    void SpawnRandomFloor()
     {
-        GameObject prefab;
+        GameObject prefab = floorPrefabs[Random.Range(0, floorPrefabs.Length)];
+        Spawn(prefab);
+    }
 
-        if (startIndex < startPrefabs.Length)
+    void Spawn(GameObject prefab)
+    {
+        Vector3 spawnPos = new Vector3(0, 0, nextZ);
+
+        GameObject obj = Instantiate(prefab, spawnPos, Quaternion.identity);
+        floors.Enqueue(obj);
+
+        // ▼ここが超重要
+        if (sideSpawner != null)
         {
-            prefab = startPrefabs[startIndex];
-            startIndex++;
-        }
-        else
-        {
-            prefab = GetRandomPrefab();
+            sideSpawner.SpawnSideObjects(spawnPos, obj.transform);
         }
 
-        Vector3 spawnPos = new Vector3(
-            transform.position.x,
-            transform.position.y,
-            nextZ
-        );
-
-        GameObject floor = Instantiate(prefab, spawnPos, Quaternion.identity);
-
-        floors.Enqueue(floor);
         nextZ += floorLength;
-
-        // ★ カウント
-        totalSpawned++;
-    }
-
-    GameObject GetRandomPrefab()
-    {
-        int index = Random.Range(0, floorPrefabs.Length);
-        return floorPrefabs[index];
-    }
-
-    void DeleteCheck()
-    {
-        if (floors.Count == 0) return;
-
-        GameObject first = floors.Peek();
-
-        float distance = player.position.z - first.transform.position.z;
-
-        if (distance > deleteDistance)
-        {
-            Destroy(floors.Dequeue());
-        }
     }
 }
