@@ -9,6 +9,7 @@ public class FadeInSelection : MonoBehaviour
 
     void Start()
     {
+        fadePanel.transform.SetAsLastSibling();
         StartCoroutine(FadeInCoroutine());
     }
 
@@ -31,5 +32,7 @@ public class FadeInSelection : MonoBehaviour
 
         color.a = 0f;
         fadePanel.color = color;
+
+        fadePanel.transform.SetAsFirstSibling();
     }
 }
