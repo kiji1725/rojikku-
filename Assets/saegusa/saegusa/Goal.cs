@@ -18,7 +18,7 @@ public class Goal : MonoBehaviour
     public void GOAL()
     {
         Debug.Log("ÉSÅ[Éã");
-        SceneManager.LoadScene("Clear 1");
+        SceneManager.LoadScene("GameClear");
 
     }
 }
