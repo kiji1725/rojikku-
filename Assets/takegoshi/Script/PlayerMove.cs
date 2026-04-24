@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
 
         if (transform.position.y < -5f)
         {
-            SceneManager.LoadScene("GameOver 1");
+            SceneManager.LoadScene("GameOver");
         }
 
     }

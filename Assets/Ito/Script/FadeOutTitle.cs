@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Hard : MonoBehaviour
+public class FadeOutTitle : MonoBehaviour
 {
     public UnityEngine.UI.Image fadePanel;
     public float fadeDuration = 1f;
@@ -19,7 +19,7 @@ public class Hard : MonoBehaviour
     IEnumerator FadeAndLoad()
     {
         yield return StartCoroutine(FadeOut());
-        SceneManager.LoadScene("stage2");
+        SceneManager.LoadScene("DifficultySelection");
     }
 
     IEnumerator FadeOut()
