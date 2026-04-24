@@ -308,6 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b986c7997a295e54db5d3eec50016bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMove2
+  fadePanel: {fileID: 1109125609}
+  fadeDuration: 1
+  nextSceneName: DifficultySelection
 --- !u!114 &1057851065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bdaae097484b84da8a957802abb024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMove
+  fadePanel: {fileID: 1109125609}
+  fadeDuration: 1
+  nextSceneName: Title 1
 --- !u!4 &1057851066
 Transform:
   m_ObjectHideFlags: 0
