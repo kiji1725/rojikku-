@@ -5,6 +5,6 @@ public class SceneMove2 : MonoBehaviour
 {
     public void GoSelect()
     {
-        FadeManager.Instance.LoadSceneWithFade("ModeSelect");
+        FadeManager.Instance.LoadSceneWithFade("StageSelect 1");
     }
 }
