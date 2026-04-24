@@ -6,13 +6,18 @@ public class Raycast : MonoBehaviour
     [SerializeField] private PlayerMove player;
 
     [SerializeField] private float rayDistance = 100.0f;
-    float rayRotate = 45;
+
     public float rayPosY = 0.0f;
 
+    bool hitWallRight = false;
+    bool hitWallLeft = false;
 
-    
+    Vector3 hitPosRight = Vector3.zero;
+    Vector3 hitPosLeft = Vector3.zero;
 
-    bool wallRun = false;
+
+    bool wallRunRight = false;
+    bool wallRanLeft = false;
 
     void Start()
     {
@@ -24,8 +29,7 @@ public class Raycast : MonoBehaviour
     {
 
         // 最終的にプレイヤーの進行方向と同じ方向にプレイヤーと同時に進むようにする
-        transform.position = new Vector3(player.PlayerPos.x, player.PlayerPos.y + rayPosY, player.PlayerPos.z);
-
+        transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z);
 
         // Ray構造体を作成
         Ray ray = new Ray(transform.position, transform.forward);
@@ -46,41 +50,63 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
+            hitWallRight = true;
             Debug.Log("右");
-            Debug.Log("当たった相手: " + hitRight.collider.name);
             Debug.Log("当たった場所 : " + hitRight.point);
 
+            hitPosRight = hitRight.point;
         }
         // 左側のRay
         if (Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
-            Debug.Log("左");
-            Debug.Log("当たった相手: " + hitLeft.collider.name);
-            Debug.Log("当たった場所 : " + hitLeft.point);
+            hitWallLeft = true;
+            wallRanLeft = true;
 
+            Debug.Log("左");
+            Debug.Log("当たった場所 : " + hitLeft.point);
+            
+            hitPosLeft = hitLeft.point;
         }
 
+        // 右
+        if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
+        {
+            hitWallRight = false;
+            Debug.Log("右当たってない");
 
+            hitPosLeft = Vector3.zero;
+        }
+        // 左
         if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
-            Debug.Log("当たってない");
+            
+            hitWallLeft = false;
+            wallRanLeft = false;
+            Debug.Log("左当たってない");
+        
+            hitPosLeft = Vector3.zero;
+        
         }
+
+        
+
+
+
+
 
         // 赤い線と青い線を描画
         Debug.DrawRay(ray.origin, leftFront * rayDistance, Color.red);
         Debug.DrawRay(ray.origin, rightFront * rayDistance, Color.blue);
 
-        //if ()
-        //{
-
-        //}
 
 
     }// update
 
-    // Rayが当たった座標で分岐してこのフラグをtrueにすると壁走りができるようになる
-    public bool IsWallRun { get { return wallRun;  } }
+    // Rayが当たった座標で分岐してこのフラグをtrueにすると壁走りができるようにする
+    public bool IsWallRunRight { get { return wallRunRight;  } }
+    public bool IsWallRunLeft { get { return wallRanLeft; } }
+
 
 
 

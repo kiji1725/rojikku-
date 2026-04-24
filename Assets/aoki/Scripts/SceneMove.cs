@@ -5,6 +5,6 @@ public class SceneMove : MonoBehaviour
 {
     public void GoTitle()
     {
-        SceneManager.LoadScene("Title");
+        FadeManager.Instance.LoadSceneWithFade("Title 1");
     }
 }
