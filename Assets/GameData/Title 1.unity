@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fade
   fadePanel: {fileID: 706934409}
   fadeDuration: 1
-  nextSceneName: 
+  nextSceneName: DifficultySelection
 --- !u!4 &1731592601
 Transform:
   m_ObjectHideFlags: 0

@@ -561,6 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3e0b5efc4a49f43a85fe9c16e30644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Normal
+  fadePanel: {fileID: 179821120}
+  fadeDuration: 1
+  nextSceneName: 
 --- !u!114 &888888571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,7 +610,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 888888570}
         m_TargetAssemblyTypeName: Normal, Assembly-CSharp
-        m_MethodName: OnClickNormal
+        m_MethodName: StartFade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -992,6 +995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ccd316926cf8247bf75550ec1323fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hard
+  fadePanel: {fileID: 179821120}
+  fadeDuration: 1
+  nextSceneName: 
 --- !u!114 &1614910345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1044,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1614910344}
         m_TargetAssemblyTypeName: Hard, Assembly-CSharp
-        m_MethodName: OnClickNormal
+        m_MethodName: StartFade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
