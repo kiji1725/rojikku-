@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 702207067}
   - component: {fileID: 702207066}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,6 +276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b986c7997a295e54db5d3eec50016bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMove2
+  fadePanel: {fileID: 1581947845}
+  fadeDuration: 1
+  nextSceneName: 
 --- !u!114 &702207067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bdaae097484b84da8a957802abb024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMove
+  fadePanel: {fileID: 1581947845}
+  fadeDuration: 1
+  nextSceneName: 
 --- !u!4 &702207068
 Transform:
   m_ObjectHideFlags: 0
@@ -441,7 +447,7 @@ GameObject:
   - component: {fileID: 1538748160}
   - component: {fileID: 1538748159}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +522,7 @@ GameObject:
   - component: {fileID: 1581947846}
   - component: {fileID: 1581947845}
   m_Layer: 5
-  m_Name: Image
+  m_Name: kuro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -614,6 +620,10 @@ PrefabInstance:
     - target: {fileID: 1762329766067319111, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528400403148727126, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
+      propertyPath: m_Name
+      value: Re
       objectReference: {fileID: 0}
     - target: {fileID: 2692059740586903801, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_Pivot.x
