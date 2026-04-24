@@ -4,35 +4,37 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    public float score;
+    float score;
 
     void Awake()
     {
-        // ▼1つだけ残す
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // ←シーン跨ぎ
+            DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (instance != this)
         {
             Destroy(gameObject);
+            return;
         }
     }
 
-    // ▼スコア更新
+    public void AddScore(float value)
+    {
+        score += value;
+    }
+
     public void SetScore(float newScore)
     {
         score = newScore;
     }
 
-    // ▼スコア取得
     public int GetScore()
     {
-        return Mathf.FloorToInt(score);
+        return Mathf.Max(0, Mathf.FloorToInt(score));
     }
 
-    // ▼リセット（リトライ用）
     public void ResetScore()
     {
         score = 0;

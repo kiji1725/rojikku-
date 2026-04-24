@@ -11,14 +11,18 @@ public class FloorSpawner : MonoBehaviour
 
     public Transform player;
 
+    [Header("生成設定")]
     public int startSpawnCount = 5;
+    public int aheadCount = 7;
     public float floorLength = 10f;
     public float deleteDistance = 30f;
 
     private float nextZ;
     private Queue<GameObject> floors = new Queue<GameObject>();
-
     private int startIndex = 0;
+
+    // ★ デバッグ用
+    private int totalSpawned = 0;
 
     void Start()
     {
@@ -30,6 +34,9 @@ public class FloorSpawner : MonoBehaviour
     {
         SpawnCheck();
         DeleteCheck();
+
+        // ★ 毎フレーム表示（軽くしたいなら消してOK）
+        Debug.Log($"現在の床数: {floors.Count} / 累計生成: {totalSpawned}");
     }
 
     void InitialSpawn()
@@ -42,7 +49,7 @@ public class FloorSpawner : MonoBehaviour
 
     void SpawnCheck()
     {
-        float distanceAhead = startSpawnCount * floorLength;
+        float distanceAhead = aheadCount * floorLength;
 
         if (player.position.z + distanceAhead > nextZ)
         {
@@ -54,7 +61,6 @@ public class FloorSpawner : MonoBehaviour
     {
         GameObject prefab;
 
-        // ★ 最初は固定Prefabを順番に使う
         if (startIndex < startPrefabs.Length)
         {
             prefab = startPrefabs[startIndex];
@@ -74,8 +80,10 @@ public class FloorSpawner : MonoBehaviour
         GameObject floor = Instantiate(prefab, spawnPos, Quaternion.identity);
 
         floors.Enqueue(floor);
-
         nextZ += floorLength;
+
+        // ★ カウント
+        totalSpawned++;
     }
 
     GameObject GetRandomPrefab()
