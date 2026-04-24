@@ -97,7 +97,7 @@ public class PlayerMotionController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("out"))
         {
-            SceneManager.LoadScene("GameOver 1");
+            SceneManager.LoadScene("GameOver");
         }
 
     }
