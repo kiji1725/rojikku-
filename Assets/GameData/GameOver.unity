@@ -521,7 +521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1581947845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,23 +729,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572559811514248271, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3572559811514248271, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3572559811514248271, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3572559811514248271, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94
+      value: -115
       objectReference: {fileID: 0}
     - target: {fileID: 3572559811514248271, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -221
+      value: -212
       objectReference: {fileID: 0}
     - target: {fileID: 3572559811514248271, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -769,23 +769,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7220619715135400068, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 7220619715135400068, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 7220619715135400068, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 7220619715135400068, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 91
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 7220619715135400068, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -221
+      value: -213
       objectReference: {fileID: 0}
     - target: {fileID: 7220619715135400068, guid: 224945e1e3a4b5d40b579b6e94b08f7a, type: 3}
       propertyPath: m_ConstrainProportionsScale
