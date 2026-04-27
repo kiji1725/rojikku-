@@ -4,7 +4,6 @@ using System.Collections;
 
 public class ResultScore : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI rankText;
 
@@ -23,15 +22,8 @@ public class ResultScore : MonoBehaviour
 
     IEnumerator ResultFlow()
     {
-        titleText.alpha = 0;
         scoreText.text = "";
         rankText.text = "";
-
-        // ▼タイトル（必要なら "CLEAR!!" に変更可）
-        titleText.text = "GAME OVER";
-        yield return StartCoroutine(FadeIn(titleText, 0.8f));
-
-        yield return new WaitForSeconds(0.5f);
 
         // ▼スコアカウントアップ
         float time = 0f;
@@ -51,7 +43,7 @@ public class ResultScore : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        // ▼ランク
+        // ▼ランク表示
         string rank = GetRank(finalScore);
         rankText.text = "Rank : " + rank;
         rankText.alpha = 0;
