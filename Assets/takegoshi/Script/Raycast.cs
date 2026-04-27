@@ -54,7 +54,7 @@ public class Raycast : MonoBehaviour
             //Debug.Log("ヒットまでの距離: " + hit.distance);
             hitWallRight = true;
             Debug.Log("右");
-            Debug.Log("当たった場所 : " + hitRight.point);
+            Debug.Log("右当たった場所 : " + hitRight.point);
 
             hitPosRight = hitRight.point;
         }
@@ -66,7 +66,7 @@ public class Raycast : MonoBehaviour
             wallRanLeft = true;
 
             Debug.Log("左");
-            Debug.Log("当たった場所 : " + hitLeft.point);
+            Debug.Log("左当たった場所 : " + hitLeft.point);
             
             hitPosLeft = hitLeft.point;
         }

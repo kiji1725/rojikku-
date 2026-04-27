@@ -3441,6 +3441,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6132440620637434956, guid: fdbbabba2e46fde4fbbfb2e0260d995c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7545588148798705029, guid: fdbbabba2e46fde4fbbfb2e0260d995c, type: 3}
       propertyPath: m_Name
       value: RayCube
@@ -3452,6 +3456,14 @@ PrefabInstance:
     - target: {fileID: 8426633774323783491, guid: fdbbabba2e46fde4fbbfb2e0260d995c, type: 3}
       propertyPath: rayPosY
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426633774323783491, guid: fdbbabba2e46fde4fbbfb2e0260d995c, type: 3}
+      propertyPath: frontWeight
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426633774323783491, guid: fdbbabba2e46fde4fbbfb2e0260d995c, type: 3}
+      propertyPath: rayDistance
+      value: 5.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
