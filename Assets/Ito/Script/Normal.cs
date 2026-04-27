@@ -19,7 +19,7 @@ public class Normal : MonoBehaviour
     IEnumerator FadeAndLoad()
     {
         yield return StartCoroutine(FadeOut());
-        SceneManager.LoadScene("stage1");
+        SceneManager.LoadScene("Stege1");
     }
 
     IEnumerator FadeOut()
