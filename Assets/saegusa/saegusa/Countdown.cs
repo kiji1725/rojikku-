@@ -15,7 +15,7 @@ public class Countdown : MonoBehaviour
         }
         else
         {
-            countdownText.text = "GO!";
+            countdownText.gameObject.SetActive(false);
         }
     }
 }
