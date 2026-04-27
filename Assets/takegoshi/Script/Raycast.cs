@@ -9,15 +9,15 @@ public class Raycast : MonoBehaviour
 
     public float rayPosY = 0.0f;
 
-    bool hitWallRight = false;
-    bool hitWallLeft = false;
+    
 
     Vector3 hitPosRight = Vector3.zero;
     Vector3 hitPosLeft = Vector3.zero;
 
+    
 
     bool wallRunRight = false;
-    bool wallRanLeft = false;
+    bool wallRunLeft = false;
 
     public   float frontWeight = 1.0f;
 
@@ -52,7 +52,7 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
-            hitWallRight = true;
+            wallRunRight = true;
             Debug.Log("右");
             Debug.Log("右当たった場所 : " + hitRight.point);
 
@@ -62,8 +62,7 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
-            hitWallLeft = true;
-            wallRanLeft = true;
+            wallRunLeft = true;
 
             Debug.Log("左");
             Debug.Log("左当たった場所 : " + hitLeft.point);
@@ -74,7 +73,7 @@ public class Raycast : MonoBehaviour
         // 右
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
-            hitWallRight = false;
+            wallRunRight = false;
             Debug.Log("右当たってない");
 
             hitPosLeft = Vector3.zero;
@@ -83,8 +82,7 @@ public class Raycast : MonoBehaviour
         if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
             
-            hitWallLeft = false;
-            wallRanLeft = false;
+            wallRunLeft = false;
             Debug.Log("左当たってない");
         
             hitPosLeft = Vector3.zero;
@@ -107,7 +105,7 @@ public class Raycast : MonoBehaviour
 
     // Rayが当たった座標で分岐してこのフラグをtrueにすると壁走りができるようにする
     public bool IsWallRunRight { get { return wallRunRight;  } }
-    public bool IsWallRunLeft { get { return wallRanLeft; } }
+    public bool IsWallRunLeft { get { return wallRunLeft; } }
 
 
 

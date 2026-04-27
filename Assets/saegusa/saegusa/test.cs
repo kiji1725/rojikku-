@@ -21,7 +21,7 @@ public class PlayerP : MonoBehaviour
     [SerializeField] float lowJumpMultiplier = 2.0f;// ��W�����v����
 
     [Header("Death Count")]
-    [SerializeField] int maxDeathCount = 100;   // ���񎀂񂾂�Q�[���I�[�o�[
+    //[SerializeField] int maxDeathCount = 100;   // ���񎀂񂾂�Q�[���I�[�o�[
     private static int deathCount = 0;        // ����̎��S��
     private static int totalDeathCount = 0;   // �g�[�^�����S��
     private static bool loaded = false;       // ��1�񂾂����[�h�p

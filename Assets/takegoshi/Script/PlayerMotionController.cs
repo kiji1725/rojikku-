@@ -43,6 +43,7 @@ public class PlayerMotionController : MonoBehaviour
 
     void Update()
     {
+        // 打つ前にこのモーションを入れる
         // ADS右クリック長押し あんま使わない
         if (Input.GetMouseButtonDown(1) && !jumpFlag && !isSliding)
         {
