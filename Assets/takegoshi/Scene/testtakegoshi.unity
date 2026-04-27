@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Score
   scoreText: {fileID: 0}
+  player: {fileID: 0}
   scoreMultiplier: 1.5
   countSpeed: 200
 --- !u!114 &684527714
@@ -896,6 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMotionController
   PlayerAnimator: {fileID: 684527709}
+  angle: {fileID: 0}
   rb: {fileID: 684527712}
   jumpForce: 23
   playerGravity: -15
@@ -1308,6 +1310,8 @@ MonoBehaviour:
   animator: {fileID: 684527709}
   motionController: {fileID: 684527715}
   ray: {fileID: 1950381199}
+  maxAngle: 90
+  stepAngle: 45
   changeCount: 0
   rotateSpeed: 10
 --- !u!4 &799253744
@@ -2449,6 +2453,7 @@ MonoBehaviour:
   player: {fileID: 684527716}
   rayDistance: 10
   rayPosY: 5
+  frontWeight: 1
 --- !u!4 &1950381200
 Transform:
   m_ObjectHideFlags: 0

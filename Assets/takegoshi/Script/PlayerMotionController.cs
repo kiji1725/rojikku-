@@ -6,6 +6,7 @@ public class PlayerMotionController : MonoBehaviour
 {
 
     [SerializeField] private Animator PlayerAnimator;
+    [SerializeField] private AngleChange angle;
 
     // アニメーション用文字列
     string ads = "ADS";
@@ -33,7 +34,7 @@ public class PlayerMotionController : MonoBehaviour
     private void FixedUpdate()
     {
         // 毎フレーム重力をかける
-        if (!isGround)
+        if (!isGround && angle.CurrentZ != 90.0f)
         {
             rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
         }

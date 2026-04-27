@@ -19,6 +19,8 @@ public class Raycast : MonoBehaviour
     bool wallRunRight = false;
     bool wallRanLeft = false;
 
+    public   float frontWeight = 1.0f;
+
     void Start()
     {
 
@@ -29,7 +31,7 @@ public class Raycast : MonoBehaviour
     {
 
         // 最終的にプレイヤーの進行方向と同じ方向にプレイヤーと同時に進むようにする
-        transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z);
+        transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z + 1.0f);
 
         // Ray構造体を作成
         Ray ray = new Ray(transform.position, transform.forward);
@@ -39,9 +41,9 @@ public class Raycast : MonoBehaviour
         RaycastHit hitRight;
 
         // 右前方向
-        Vector3 rightFront = (transform.forward + transform.right).normalized;
+        Vector3 rightFront = (transform.forward + transform.right * frontWeight).normalized;
         // 左前方向
-        Vector3 leftFront = (transform.forward - transform.right).normalized;
+        Vector3 leftFront = (transform.forward - transform.right * frontWeight).normalized;
 
         // transform.position から transform.forward に向かってRayを飛ばす
         // Rayが当たったところの座標からプレイヤーに壁走りができることを伝えることができるようにする
