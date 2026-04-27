@@ -21,7 +21,7 @@ public class PlayerMotionController : MonoBehaviour
     public bool isGround = false;
 
     public bool isSliding = false;
-    // bool isADS = false;
+    bool isADS = false;
 
     [SerializeField] private AngleChange angleChange;
 
@@ -43,7 +43,7 @@ public class PlayerMotionController : MonoBehaviour
     void Update()
     {
         // ADS右クリック長押し あんま使わない
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !jumpFlag && !isSliding)
         {
             PlayerAnimator.SetTrigger(ads);
         }
@@ -53,13 +53,15 @@ public class PlayerMotionController : MonoBehaviour
         }
 
         // スライディング↓orSキー
-        if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding) && angleChange.CurrentZ == 0 )
+        if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding && !isADS)
+            && angleChange.CurrentZ == 0 )
         {
             isSliding = true;
             PlayerAnimator.SetTrigger(slide);
         }
         // ジャンプ↑orWキー
-        if ( ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding) && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
+        if ( ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding && !isADS)
+            && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
         {
 
             jumpFlag = true;

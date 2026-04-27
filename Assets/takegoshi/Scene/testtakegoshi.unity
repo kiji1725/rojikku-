@@ -1307,6 +1307,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AngleChange
   animator: {fileID: 684527709}
   motionController: {fileID: 684527715}
+  ray: {fileID: 1950381199}
+  changeCount: 0
   rotateSpeed: 10
 --- !u!4 &799253744
 Transform:
