@@ -6,36 +6,47 @@ namespace BigRookGames.Weapons
 {
     public class ProjectileController : MonoBehaviour
     {
-        // 設定
+        //====== 設定 =====
+
+        // 球の速度
         public float speed = 100;
+
+        // 衝突判定のレイヤー
         public LayerMask collisionLayerMask;
 
-        // 爆発VFX
+        // 爆発エフェクト
         public GameObject rocketExplosion;
 
-        // 発射体メッシュ
+        // 球の見た目
         public MeshRenderer projectileMesh;
 
-        // スクリプト変数
+        // ====内部制御 ====
+
+        // 何かに当たったかどうか
         private bool targetHit;
 
-        // 音
+        // ==== サウンド ====
+
+        // 飛行時の音
         public AudioSource inFlightAudioSource;
 
-        // VFX
+        // ==== VFX ====
+
+        // ヒット時に止めるパーティクル
         public ParticleSystem disableOnHit;
 
         private void Start()
         {
-            Invoke("ExplodeIfNotHit", 3f); // 3秒後
+            // 一定時間後に強制爆発
+            Invoke("ExplodeIfNotHit", 1f); // 1秒後
         }
 
         private void Update()
         {
-            // ターゲットがヒットしたかどうかを確認してください。ターゲットがヒットした場合は位置を更新したくありません
+            // すでに当たっていたら動かさない
             if (targetHit) return;
 
-            // ゲームオブジェクトを定義された速度で前方に移動させる
+            // 前方に移動
             transform.position += transform.forward * (speed * Time.deltaTime);
 
         }
@@ -55,7 +66,7 @@ namespace BigRookGames.Weapons
             projectileMesh.enabled = false;
             targetHit = true;
             inFlightAudioSource.Stop();
-            foreach(Collider col in GetComponents<Collider>())
+            foreach (Collider col in GetComponents<Collider>())
             {
                 col.enabled = false;
             }
@@ -85,7 +96,7 @@ namespace BigRookGames.Weapons
             if (targetHit) return; // すでに当たってたら何もしない
 
             Explode();
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 }
