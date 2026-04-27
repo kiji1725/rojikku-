@@ -10,8 +10,8 @@ public class AngleChange : MonoBehaviour
     // string GR = "GunRun";
 
     // 角度の最大値とステップ値を定数として定義
-    public const float maxAngle = 90f;
-    public const float stepAngle = 45f;
+    public float maxAngle = 90f;
+    public float stepAngle = 45f;
 
     public int changeCount = 0;
 
@@ -30,6 +30,7 @@ public class AngleChange : MonoBehaviour
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !motionController.JumpFlag)
         {
+
             // 右移動
             // 0から1
             // 1から2
@@ -59,11 +60,10 @@ public class AngleChange : MonoBehaviour
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !motionController.JumpFlag)
         {
+
             // 左移動
             // 0からー1
             // －1から－2
-
-
             if (changeCount == 0)
             {
                 // ここで-１になる
@@ -86,18 +86,12 @@ public class AngleChange : MonoBehaviour
                 targetZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
             }
 
-
-            
-
         }
 
         // 目標のZ軸の角度に向かって現在のZ軸の角度を徐々に変える
         currentZ = Mathf.Lerp(currentZ, targetZ, Time.deltaTime * rotateSpeed);
 
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
-
-        // 壁の問題が解決したらRaycastで判定して壁があるところだけ走れるようにする
-
 
 
     }
