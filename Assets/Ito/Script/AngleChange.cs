@@ -37,21 +37,22 @@ public class AngleChange : MonoBehaviour
             {
                 // ‚±‚±‚Å‚P‚É‚È‚é
                 changeCount++;
+                //currentZ = 45.0f;
                 targetZ = 45.0f;
-                currentZ = 45.0f;
             }
             else if (changeCount == 1 && ray.IsWallRunRight)
             {
                 // 2‚É‚È‚é
                 changeCount++;
+                //currentZ = 90;
                 targetZ = 90.0f;
-                currentZ = 90;
             }
             // ‚»‚êˆÈŠO
             else if (changeCount < 0)
             {
-                changeCount--;
-                currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
+                changeCount++;
+                //currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
+                targetZ = Mathf.Min(currentZ + stepAngle, maxAngle);
             } 
         }
 
@@ -67,25 +68,26 @@ public class AngleChange : MonoBehaviour
             {
                 // ‚±‚±‚Å-‚P‚É‚È‚é
                 changeCount--;
+                //currentZ = -45.0f;
                 targetZ = -45.0f;
-                currentZ = -45.0f;
             }
             else if (changeCount == -1 && ray.IsWallRunLeft)
             {
                 // -2‚É‚È‚é
                 changeCount--;
+                //currentZ = -90.0f;
                 targetZ = -90.0f;
-                currentZ = -90.0f;
             }
             // ‚»‚êˆÈŠO
             else if (changeCount > 0)
             {
                 changeCount--;
-                currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
+                //currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
+                targetZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
             }
 
 
-            changeCount--;
+            
 
         }
 
