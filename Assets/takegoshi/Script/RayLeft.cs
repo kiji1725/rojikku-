@@ -6,11 +6,11 @@ public class RayLeft : MonoBehaviour
 
     [SerializeField] private float rayDistance = 10.0f;
 
-    public float rayPosY = 0.0f;
+    //public float rayPosY = 0.0f;
 
     Vector3 hitPosLeft = Vector3.zero;
 
-    bool wallRunLeft = false;
+    public bool wallRunLeft = false;
 
     public float frontWeight = 1.0f;
 
@@ -26,7 +26,7 @@ public class RayLeft : MonoBehaviour
     {
 
         // 最終的にプレイヤーの進行方向と同じ方向にプレイヤーと同時に進むようにする
-        transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z + 1.0f);
+        //transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z + 1.0f);
 
         // Ray構造体を作成
         Ray ray = new Ray(transform.position, transform.forward);
@@ -54,7 +54,7 @@ public class RayLeft : MonoBehaviour
         }
  
 
-        // 左
+        // 左が当たってないとき
         if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
 
@@ -72,7 +72,7 @@ public class RayLeft : MonoBehaviour
 
 
 
-        // 赤い線と青い線を描画
+        // 赤い線を描画
         Debug.DrawRay(ray.origin, leftFront * rayDistance, Color.red);
 
 
@@ -80,7 +80,6 @@ public class RayLeft : MonoBehaviour
     }// update
 
     // Rayが当たった座標で分岐してこのフラグをtrueにすると壁走りができるようにする
-
     public bool IsWallRunLeft { get { return wallRunLeft; } }
 
 

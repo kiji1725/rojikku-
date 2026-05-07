@@ -11,7 +11,7 @@ public class RayRight : MonoBehaviour
 
     Vector3 hitPosRight = Vector3.zero;
 
-    bool wallRunRight = false;
+    public bool wallRunRight = false;
 
     public float frontWeight = 1.0f;
 
@@ -30,7 +30,7 @@ public class RayRight : MonoBehaviour
         transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z + 1.0f);
 
         // Ray構造体を作成
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new(transform.position, transform.forward);
 
         // RaycastHit には当たったオブジェクトの情報が入る
 
@@ -55,8 +55,8 @@ public class RayRight : MonoBehaviour
         }
 
 
-        // 右
-        if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
+        // 右が当たってないとき
+        if (!Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
             wallRunRight = false;
             Debug.Log("右当たってない");
@@ -69,7 +69,7 @@ public class RayRight : MonoBehaviour
 
 
 
-        // 赤い線と青い線を描画
+        // 青い線を描画
         Debug.DrawRay(ray.origin, rightFront * rayDistance, Color.blue);
 
 

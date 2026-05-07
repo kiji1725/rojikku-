@@ -57,7 +57,7 @@ public class AngleChange : MonoBehaviour
             } 
         }
 
-        // 走るアニメーションのときだけ角度を変える
+        // ジャンプのときに角度を変えることができないようにする
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !motionController.JumpFlag)
         {
 
