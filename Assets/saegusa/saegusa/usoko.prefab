@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8053095869530859703}
   - component: {fileID: 3646317000048740192}
   m_Layer: 0
-  m_Name: PlayerManager 1
+  m_Name: usoko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,6 +13,8 @@ public class Normal : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip startSE;
 
+    [Header("‘Ò‹@ŠÔ")]
+    public float delayBeforeSE = 0.5f;
 
     // ƒ{ƒ^ƒ“‚©‚çŒÄ‚Ô
     public void StartFade()
@@ -23,6 +25,8 @@ public class Normal : MonoBehaviour
 
     IEnumerator PlaySEAndFade()
     {
+        yield return new WaitForSeconds(delayBeforeSE);
+
         // SEÄ¶
         if (audioSource != null && startSE != null)
         {
