@@ -1844,8 +1844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Score
   scoreText: {fileID: 546992639}
   player: {fileID: 1395574707}
-  scoreMultiplier: 1.5
-  countSpeed: 200
+  scoreMultiplier: 100
+  countSpeed: 1000
 --- !u!1001 &1488657112
 PrefabInstance:
   m_ObjectHideFlags: 0

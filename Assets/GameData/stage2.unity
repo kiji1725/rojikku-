@@ -3403,6 +3403,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1398874958}
+    - target: {fileID: 3076657040237294922, guid: d1af1eb427699174995129a1a1cb9ae9, type: 3}
+      propertyPath: countSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076657040237294922, guid: d1af1eb427699174995129a1a1cb9ae9, type: 3}
+      propertyPath: scoreMultiplier
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8674455330921715441, guid: d1af1eb427699174995129a1a1cb9ae9, type: 3}
       propertyPath: speed
       value: 8
