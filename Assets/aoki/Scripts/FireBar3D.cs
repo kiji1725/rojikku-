@@ -5,7 +5,7 @@ public class FireBar3D : MonoBehaviour
 
     public GameObject fireballPrefab;
     public int count = 6;
-    public float spacing = 0.7f;
+    public float spacing = 0.5f;
     public float rotationSpeed = 100f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,10 +13,10 @@ public class FireBar3D : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Vector3 pos = new Vector3(spacing * i, 0 ,0);
+            Vector3 pos = new Vector3(0, spacing * i, 0);
 
             GameObject obj = Instantiate(fireballPrefab, transform);
-            obj.transform.position = pos;
+            obj.transform.localPosition = pos;
         }
     }
 
