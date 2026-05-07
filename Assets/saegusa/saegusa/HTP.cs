@@ -4,12 +4,45 @@ public class HTP : MonoBehaviour
 {
     public GameObject targetImage;
 
+    [Header("SE")]
+    public AudioSource audioSource;
+    public AudioClip buttonSE;
+
     public void Show()
     {
-        targetImage.SetActive(true);
+        PlaySE();
+
+        if (targetImage != null)
+        {
+            targetImage.SetActive(false);
+        }
     }
+
+    public void Hide()
+    {
+        PlaySE();
+
+        if (targetImage != null)
+        {
+            targetImage.SetActive(false);
+        }
+    }
+
     public void Toggle()
     {
-        targetImage.SetActive(!targetImage.activeSelf);
+        PlaySE();
+
+        if (targetImage != null)
+        {
+            targetImage.SetActive(!targetImage.activeSelf);
+        }
+    }
+
+    void PlaySE()
+    {
+        if (audioSource != null && buttonSE != null)
+        {
+            audioSource.PlayOneShot(buttonSE);
+        }
     }
 }
