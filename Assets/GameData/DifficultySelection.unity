@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &179821120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +565,8 @@ MonoBehaviour:
   fadePanel: {fileID: 179821120}
   fadeDuration: 1
   audioSource: {fileID: 888888574}
-  startSE: {fileID: 8300000, guid: 9afa1ec49ccd03342afc545c754472b0, type: 3}
+  startSE: {fileID: 8300000, guid: 3d8b5e3a9cb70aa47996cad358b9588c, type: 3}
+  delayBeforeSE: 0.1
 --- !u!114 &888888571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,7 +1265,8 @@ MonoBehaviour:
   fadePanel: {fileID: 179821120}
   fadeDuration: 1
   audioSource: {fileID: 1614910348}
-  startSE: {fileID: 8300000, guid: c8632b2fa5991d542ad63f5e98a74448, type: 3}
+  startSE: {fileID: 8300000, guid: 3d8b5e3a9cb70aa47996cad358b9588c, type: 3}
+  delayBeforeSE: 0.1
 --- !u!114 &1614910345
 MonoBehaviour:
   m_ObjectHideFlags: 0
