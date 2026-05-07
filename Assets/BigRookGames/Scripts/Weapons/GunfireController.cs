@@ -43,7 +43,8 @@ namespace BigRookGames.Weapons
         [SerializeField] private Animator animator;
 
         
-        
+
+
 
         private void Start()
         {

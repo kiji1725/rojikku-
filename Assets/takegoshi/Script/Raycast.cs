@@ -9,15 +9,17 @@ public class Raycast : MonoBehaviour
 
     public float rayPosY = 0.0f;
 
-    bool hitWallRight = false;
-    bool hitWallLeft = false;
+    
 
     Vector3 hitPosRight = Vector3.zero;
     Vector3 hitPosLeft = Vector3.zero;
 
+    
 
     bool wallRunRight = false;
-    bool wallRanLeft = false;
+    bool wallRunLeft = false;
+
+    public   float frontWeight = 1.0f;
 
     void Start()
     {
@@ -29,7 +31,7 @@ public class Raycast : MonoBehaviour
     {
 
         // 最終的にプレイヤーの進行方向と同じ方向にプレイヤーと同時に進むようにする
-        transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z);
+        transform.position = new Vector3(transform.position.x, rayPosY, player.PlayerPos.z + 1.0f);
 
         // Ray構造体を作成
         Ray ray = new Ray(transform.position, transform.forward);
@@ -39,9 +41,9 @@ public class Raycast : MonoBehaviour
         RaycastHit hitRight;
 
         // 右前方向
-        Vector3 rightFront = (transform.forward + transform.right).normalized;
+        Vector3 rightFront = (transform.forward + transform.right * frontWeight).normalized;
         // 左前方向
-        Vector3 leftFront = (transform.forward - transform.right).normalized;
+        Vector3 leftFront = (transform.forward - transform.right * frontWeight).normalized;
 
         // transform.position から transform.forward に向かってRayを飛ばす
         // Rayが当たったところの座標からプレイヤーに壁走りができることを伝えることができるようにする
@@ -50,9 +52,9 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
-            hitWallRight = true;
+            wallRunRight = true;
             Debug.Log("右");
-            Debug.Log("当たった場所 : " + hitRight.point);
+            Debug.Log("右当たった場所 : " + hitRight.point);
 
             hitPosRight = hitRight.point;
         }
@@ -60,11 +62,10 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
-            hitWallLeft = true;
-            wallRanLeft = true;
+            wallRunLeft = true;
 
             Debug.Log("左");
-            Debug.Log("当たった場所 : " + hitLeft.point);
+            Debug.Log("左当たった場所 : " + hitLeft.point);
             
             hitPosLeft = hitLeft.point;
         }
@@ -72,7 +73,7 @@ public class Raycast : MonoBehaviour
         // 右
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
-            hitWallRight = false;
+            wallRunRight = false;
             Debug.Log("右当たってない");
 
             hitPosLeft = Vector3.zero;
@@ -81,8 +82,7 @@ public class Raycast : MonoBehaviour
         if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
             
-            hitWallLeft = false;
-            wallRanLeft = false;
+            wallRunLeft = false;
             Debug.Log("左当たってない");
         
             hitPosLeft = Vector3.zero;
@@ -105,7 +105,7 @@ public class Raycast : MonoBehaviour
 
     // Rayが当たった座標で分岐してこのフラグをtrueにすると壁走りができるようにする
     public bool IsWallRunRight { get { return wallRunRight;  } }
-    public bool IsWallRunLeft { get { return wallRanLeft; } }
+    public bool IsWallRunLeft { get { return wallRunLeft; } }
 
 
 
