@@ -5,7 +5,7 @@ public class Raycast : MonoBehaviour
 
     [SerializeField] private PlayerMove player;
 
-    [SerializeField] private float rayDistance = 100.0f;
+    [SerializeField] private float rayDistance = 10.0f;
 
     public float rayPosY = 0.0f;
 
@@ -48,16 +48,6 @@ public class Raycast : MonoBehaviour
         // transform.position から transform.forward に向かってRayを飛ばす
         // Rayが当たったところの座標からプレイヤーに壁走りができることを伝えることができるようにする
 
-        // 右側のRay
-        if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
-        {
-            //Debug.Log("ヒットまでの距離: " + hit.distance);
-            wallRunRight = true;
-            Debug.Log("右");
-            Debug.Log("右当たった場所 : " + hitRight.point);
-
-            hitPosRight = hitRight.point;
-        }
         // 左側のRay
         if (Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
@@ -69,15 +59,17 @@ public class Raycast : MonoBehaviour
             
             hitPosLeft = hitLeft.point;
         }
-
-        // 右
+        // 右側のRay
         if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
         {
-            wallRunRight = false;
-            Debug.Log("右当たってない");
+            //Debug.Log("ヒットまでの距離: " + hit.distance);
+            wallRunRight = true;
+            Debug.Log("右");
+            Debug.Log("右当たった場所 : " + hitRight.point);
 
-            hitPosLeft = Vector3.zero;
+            hitPosRight = hitRight.point;
         }
+
         // 左
         if (!Physics.Raycast(transform.position, leftFront, out hitLeft, rayDistance))
         {
@@ -89,6 +81,14 @@ public class Raycast : MonoBehaviour
         
         }
 
+        // 右
+        if (Physics.Raycast(transform.position, rightFront, out hitRight, rayDistance))
+        {
+            wallRunRight = false;
+            Debug.Log("右当たってない");
+
+            hitPosLeft = Vector3.zero;
+        }
         
 
 

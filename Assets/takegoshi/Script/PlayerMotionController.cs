@@ -34,7 +34,7 @@ public class PlayerMotionController : MonoBehaviour
     private void FixedUpdate()
     {
         // –ˆƒtƒŒ[ƒ€d—Í‚ğ‚©‚¯‚é
-        if (!isGround && angle.CurrentZ != 90.0f)
+        if (!isGround && angle.CurrentZ != 90.0f && angle.CurrentZ != -90.0f)
         {
             rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
         }
