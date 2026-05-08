@@ -120,6 +120,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8008940769393308759}
   m_SourcePrefab: {fileID: 100100000, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+--- !u!114 &730084111738687218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6345877076038712271, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+  m_PrefabInstance: {fileID: 5922464637244388669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392800575908276893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f11b66cc14eea4c899f1009cd4808f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMotionController
 --- !u!95 &3298446821236069250 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9220766048058959551, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
@@ -154,6 +165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea87314145721b4489bf1240ecc89463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AngleChange
+--- !u!1 &6346125183499411561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 729905359613269332, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+  m_PrefabInstance: {fileID: 5922464637244388669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6800574678604313829 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 887398887432274392, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
@@ -165,6 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a422cff436b26419eaa0c0a8f91e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+--- !u!1 &8324036499681070882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2428628966729579039, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+  m_PrefabInstance: {fileID: 5922464637244388669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8928965711297569632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3015966116830467677, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
@@ -187,23 +208,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933e18ea02e20a1429dc3cdc3671dbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigRookGames.Weapons.GunfireController
-  GunShotClip: {fileID: 0}
-  ReloadClip: {fileID: 0}
-  source: {fileID: 0}
-  reloadSource: {fileID: 0}
+  GunShotClip: {fileID: 8300000, guid: 40e71b0f7bd610849b40f150553f4702, type: 3}
+  ReloadClip: {fileID: 8300000, guid: c3430338b7987524d96ce1f63db280cd, type: 3}
+  source: {fileID: 9170880019402913998}
+  reloadSource: {fileID: 9170880019402913998}
   audioPitch: {x: 0.9, y: 1.1}
-  muzzlePrefab: {fileID: 0}
-  muzzlePosition: {fileID: 0}
+  muzzlePrefab: {fileID: 450044020708499364, guid: 93a162fc463d2d842a8c25e141618684, type: 3}
+  muzzlePosition: {fileID: 8324036499681070882}
   shotDelay: 0.5
   rotate: 1
   rotationSpeed: 0.25
   scope: {fileID: 0}
   scopeActive: 1
-  projectilePrefab: {fileID: 0}
-  projectileToDisableOnFire: {fileID: 0}
+  projectilePrefab: {fileID: 4092872357349286730, guid: 5269dd52fdc50ea429c6b6a65cc1161e, type: 3}
+  projectileToDisableOnFire: {fileID: 6346125183499411561}
   timeLastFired: 0
-  animator: {fileID: 0}
-  playerController: {fileID: 0}
+  animator: {fileID: 3298446821236069250}
+  playerController: {fileID: 730084111738687218}
+--- !u!82 &9170880019402913998 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3275613348518907379, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+  m_PrefabInstance: {fileID: 5922464637244388669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9010673524452789818
 PrefabInstance:
   m_ObjectHideFlags: 0
