@@ -710,6 +710,8 @@ MonoBehaviour:
   currentAmmo: 0
   maxAmmo: 50
   Animation: {fileID: 0}
+  audioSource: {fileID: 0}
+  AmmoSE: {fileID: 0}
 --- !u!114 &2000404289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +774,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AngleChange
   animator: {fileID: 5866666021909216657, guid: e0b906a9198a9154f9f060cd3dfc96fa, type: 3}
   motionController: {fileID: 0}
+  rayRight: {fileID: 0}
+  rayLeft: {fileID: 0}
+  maxAngle: 90
+  stepAngle: 45
+  changeCount: 0
+  rotateSpeed: 50
+  currentZ: 0
+  audioSource: {fileID: 0}
+  GravitySE: {fileID: 0}
 --- !u!1001 &8949807184333002758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,15 +809,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 537239363553487783, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -9.313226e-10
       objectReference: {fileID: 0}
     - target: {fileID: 537239363553487783, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.000000007469495
       objectReference: {fileID: 0}
     - target: {fileID: 537239363553487783, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.0000000017852824
       objectReference: {fileID: 0}
     - target: {fileID: 537239363553487783, guid: 5ec2155529830d94fbd346f6d465efea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
