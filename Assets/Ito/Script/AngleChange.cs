@@ -22,7 +22,14 @@ public class AngleChange : MonoBehaviour
     // 目標のZ軸の角度と現在のZ軸の角度を保持する変数
     float targetZ = 0f;
     [SerializeField] float currentZ = 0f;
-    
+
+    // SE
+    [Header("SE")]
+    public AudioSource audioSource;
+    public AudioClip GravitySE;
+
+
+
     void Update()
     {
 
@@ -48,6 +55,8 @@ public class AngleChange : MonoBehaviour
                 changeCount++;
                 //currentZ = 90;
                 targetZ = 90.0f;
+                audioSource.PlayOneShot(GravitySE);
+
             }
             // それ以外
             else if (changeCount < 0)
@@ -78,6 +87,8 @@ public class AngleChange : MonoBehaviour
                 changeCount--;
                 //currentZ = -90.0f;
                 targetZ = -90.0f;
+                audioSource.PlayOneShot(GravitySE);
+
             }
             // それ以外
             else if (changeCount > 0)

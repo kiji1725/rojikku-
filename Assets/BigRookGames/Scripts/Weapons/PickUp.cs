@@ -1,3 +1,4 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -8,6 +9,11 @@ public class PickUp : MonoBehaviour
 
     public Animation Animation = null;
 
+    // SE
+    [Header("SE")]
+    public AudioSource audioSource;
+    public AudioClip AmmoSE;
+
     // --- ’e‚ğ‘‚â‚· ---
     public void AddAmmo(int amount)
     {
@@ -17,6 +23,9 @@ public class PickUp : MonoBehaviour
             currentAmmo = maxAmmo;
 
         Debug.Log("Œ»İ‚Ì’e”: " + currentAmmo);
+
+        audioSource.PlayOneShot(AmmoSE);
+
     }
 
     // --- ’e‚ğg‚¤ ---
