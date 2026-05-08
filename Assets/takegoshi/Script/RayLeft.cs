@@ -47,7 +47,6 @@ public class RayLeft : MonoBehaviour
             //Debug.Log("ƒqƒbƒg‚Ü‚Å‚Ì‹——£: " + hit.distance);
             wallRunLeft = true;
 
-            Debug.Log("¶");
             Debug.Log("¶“–‚½‚Á‚½êŠ : " + hitLeft.point);
 
             hitPosLeft = hitLeft.point;

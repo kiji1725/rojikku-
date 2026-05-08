@@ -48,7 +48,6 @@ public class RayRight : MonoBehaviour
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
             wallRunRight = true;
-            Debug.Log("右");
             Debug.Log("右当たった場所 : " + hitRight.point);
 
             hitPosRight = hitRight.point;

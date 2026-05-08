@@ -17,11 +17,11 @@ public class AngleChange : MonoBehaviour
     public int changeCount = 0;
 
     // 角度を変えるスピードをインスペクターで設定
-    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private float rotateSpeed = 50.0f;
 
     // 目標のZ軸の角度と現在のZ軸の角度を保持する変数
     float targetZ = 0f;
-    float currentZ = 0f;
+    [SerializeField] float currentZ = 0f;
     
     void Update()
     {
