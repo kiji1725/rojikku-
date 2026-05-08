@@ -2258,6 +2258,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 881142185569112711, guid: b83547df1942ff94d9bb0215cb0e4370, type: 3}
   m_PrefabInstance: {fileID: 917142194}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1146188147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4158688213135540032, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+  m_PrefabInstance: {fileID: 3241305116243983988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148184146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,7 +2885,7 @@ GameObject:
   - component: {fileID: 1398874959}
   - component: {fileID: 1398874958}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3453,7 +3458,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6439921932847515644, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
   m_PrefabInstance: {fileID: 3241305116243983988}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1146188147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc37a5429a2aad14b8584fcff22dfb13, type: 3}
@@ -3464,12 +3469,33 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6342978500098285697, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
   m_PrefabInstance: {fileID: 3241305116243983988}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1146188147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 598577d13ed470145a9c6b5a05bc897c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RayLeft
+--- !u!114 &1752026958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146188147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df80eae24d430f4498a95851a00c71ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Score
+  scoreText: {fileID: 1398874958}
+  player: {fileID: 1752026962}
+  scoreMultiplier: 1.5
+  countSpeed: 200
+--- !u!4 &1752026962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3478721147585932618, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+  m_PrefabInstance: {fileID: 3241305116243983988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1844734139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4079,6 +4105,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4158688213135540032, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1752026958}
     - targetCorrespondingSourceObject: {fileID: 6770394069487291817, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 328634046}
