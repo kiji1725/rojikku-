@@ -73,6 +73,10 @@ public class PlayerMotionController : MonoBehaviour
     void Update()
     {
 
+        if (!isADS)
+        {
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        }
         
 
         // 打つ前にこのモーションを入れる
@@ -93,7 +97,7 @@ public class PlayerMotionController : MonoBehaviour
         //}
 
         // スライディング↓orSキー
-        if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding && !isADS)
+        if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding)
             && isSlide )
         {
             audioSource.PlayOneShot(SlidingSE);
@@ -101,7 +105,7 @@ public class PlayerMotionController : MonoBehaviour
             playerAnimator.SetTrigger(slide);
         }
         // ジャンプ↑orWキー
-        if ((Input.GetKeyDown(KeyCode.Space) && !jumpFlag && !isSliding && !isADS)
+        if ((Input.GetKeyDown(KeyCode.Space) && !jumpFlag && !isSliding)
             && !isWall)
         {
             audioSource.PlayOneShot(JumpSE);
@@ -177,11 +181,14 @@ public class PlayerMotionController : MonoBehaviour
     }
     public void OnADS()
     {
-        transform.rotation = Quaternion.Euler(0.0f, 35.0f, 0.0f);
+        isADS = true;
+        transform.localRotation = Quaternion.Euler(0.0f, 35.0f, 0.0f);
     }
     public void OffADS()
     {
-        transform.rotation = Quaternion.Euler(0.0f, -35.0f, 0.0f);
+        isADS = false;
+        Debug.Log("OffADS");
+        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         playerAnimator.SetTrigger(run);
     }
     //public void IsADSOn()
