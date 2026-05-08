@@ -41,7 +41,7 @@ public class Hard : MonoBehaviour
         yield return StartCoroutine(FadeOut());
 
         // ƒV[ƒ“Ø‚è‘Ö‚¦
-        SceneManager.LoadScene("stage2");
+        SceneManager.LoadScene("stage3");
     }
 
     /*
