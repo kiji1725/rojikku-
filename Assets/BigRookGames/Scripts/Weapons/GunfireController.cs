@@ -76,9 +76,9 @@ namespace BigRookGames.Weapons
             {
                 if (playerAmmo != null && playerAmmo.UseAmmo(1))// 弾を消費できる場合は発射
                 {
-                    
+
                     // アニメーションイベントで呼び出す関数
-                    // FireWeapon();
+                    animator.SetTrigger("ADS");
                 }
                 else
                 {
