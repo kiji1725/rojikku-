@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+
 public class PlayerMotionController : MonoBehaviour
 {
 
-    [SerializeField] private Animator PlayerAnimator;
+    [SerializeField] private Animator playerAnimator;
     [SerializeField] private AngleChange angle;
 
     // アニメーション用文字列
@@ -13,6 +14,8 @@ public class PlayerMotionController : MonoBehaviour
     string run = "Run";
     string slide = "Slide";
     string jump = "Jump";
+
+    
 
     // ジャンプ用
     [SerializeField] private Rigidbody rb;
@@ -34,7 +37,7 @@ public class PlayerMotionController : MonoBehaviour
     private void FixedUpdate()
     {
         // 毎フレーム重力をかける
-        if (!isGround && angle.CurrentZ != 90.0f && angle.CurrentZ != -90.0f)
+        if (!isGround && (angle.CurrentZ != 90.0f && angle.CurrentZ != -90.0f))
         {
             rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
         }
@@ -47,27 +50,33 @@ public class PlayerMotionController : MonoBehaviour
         // ADS右クリック長押し あんま使わない
         if (Input.GetMouseButtonDown(1) && !jumpFlag && !isSliding)
         {
-            PlayerAnimator.SetTrigger(ads);
+            playerAnimator.SetTrigger(ads);
         }
         if (Input.GetMouseButtonUp(1))
         {
-            PlayerAnimator.SetTrigger(run);
+            playerAnimator.SetTrigger(run);
         }
+
+        // アニメーションテスト
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    playerAnimator.SetTrigger(ads);
+        //}
 
         // スライディング↓orSキー
         if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding && !isADS)
             && angleChange.CurrentZ == 0 )
         {
             isSliding = true;
-            PlayerAnimator.SetTrigger(slide);
+            playerAnimator.SetTrigger(slide);
         }
         // ジャンプ↑orWキー
-        if ( ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding && !isADS)
+        if ( ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding && !isADS)
             && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
         {
 
             jumpFlag = true;
-            PlayerAnimator.SetTrigger(jump);
+            playerAnimator.SetTrigger(jump);
             Jump();
 
         }
@@ -126,7 +135,7 @@ public class PlayerMotionController : MonoBehaviour
     // アニメーションのEventに使う関数
     public void SetRifleRun()
     {
-        PlayerAnimator.SetTrigger(run);
+        playerAnimator.SetTrigger(run);
     }
     public void SlidingOff()
     {
@@ -135,6 +144,15 @@ public class PlayerMotionController : MonoBehaviour
     public void IsJump()
     {
         jumpFlag = false;
+    }
+    public void OnADS()
+    {
+        transform.rotation = Quaternion.Euler(0.0f, 35.0f, 0.0f);
+    }
+    public void OffADS()
+    {
+        transform.rotation = Quaternion.Euler(0.0f, -35.0f, 0.0f);
+        playerAnimator.SetTrigger(run);
     }
     //public void IsADSOn()
     //{
