@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Normal : MonoBehaviour
+
+public class Easy : MonoBehaviour
 {
     public UnityEngine.UI.Image fadePanel;
     public float fadeDuration = 1f;
@@ -42,7 +43,7 @@ public class Normal : MonoBehaviour
         yield return StartCoroutine(FadeOut());
 
         // ƒV[ƒ“Ø‚è‘Ö‚¦
-        SceneManager.LoadScene("stage2");
+        SceneManager.LoadScene("stege1");
     }
 
     /*
