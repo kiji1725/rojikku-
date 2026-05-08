@@ -177,11 +177,12 @@ public class PlayerMotionController : MonoBehaviour
     }
     public void OnADS()
     {
-        transform.rotation = Quaternion.Euler(0.0f, 35.0f, 0.0f);
+        transform.localRotation = Quaternion.Euler(0.0f, 35.0f, 0.0f);
     }
     public void OffADS()
     {
-        transform.rotation = Quaternion.Euler(0.0f, -35.0f, 0.0f);
+        Debug.Log("OffADS");
+        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         playerAnimator.SetTrigger(run);
     }
     //public void IsADSOn()
