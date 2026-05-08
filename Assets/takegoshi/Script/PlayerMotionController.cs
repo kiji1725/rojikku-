@@ -27,6 +27,7 @@ public class PlayerMotionController : MonoBehaviour
     public bool isSliding = false;
     bool isADS = false;
     public bool isWall = false;
+    public bool isSlide = false;
  
 
     [SerializeField] private AngleChange angleChange;
@@ -38,7 +39,7 @@ public class PlayerMotionController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        // 壁走り
         isWall =
             Mathf.Abs(angle.CurrentZ - 90.0f) < 5.0f ||
             Mathf.Abs(angle.CurrentZ + 90.0f) < 5.0f;
@@ -49,12 +50,19 @@ public class PlayerMotionController : MonoBehaviour
             velocity.y = 0f;
             rb.linearVelocity = velocity;
         }
-
         // 毎フレーム重力をかける
         if (!isGround && !isWall)
         {
             rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
         }
+
+
+        // スライディング
+        isSlide =
+            Mathf.Abs(angle.CurrentZ) < 3.0f;
+
+
+
     }
 
 
@@ -82,7 +90,7 @@ public class PlayerMotionController : MonoBehaviour
 
         // スライディング↓orSキー
         if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding && !isADS)
-            && angleChange.CurrentZ == 0 )
+            && isSlide )
         {
             isSliding = true;
             playerAnimator.SetTrigger(slide);
