@@ -262,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &195840865
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2573,9 +2573,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 730084111738687218, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+      propertyPath: JumpSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 28c1f3e8a52ca1a4681fe4f2a51022db, type: 3}
+    - target: {fileID: 730084111738687218, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+      propertyPath: SlidingSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 9116b17b3c767e14b8fc8556345df2b5, type: 3}
+    - target: {fileID: 730084111738687218, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1971570125}
+    - target: {fileID: 730084111738687218, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 1968661645}
+    - target: {fileID: 2523984992438180206, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
+      propertyPath: AmmoSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a12be27caccbd84bb2060280a550a82, type: 3}
     - target: {fileID: 2523984992438180206, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
       propertyPath: audioSource
       value: 
