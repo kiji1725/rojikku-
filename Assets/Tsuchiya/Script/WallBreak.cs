@@ -1,5 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Audio;
 
 public class BreakOnHit : MonoBehaviour
 {
@@ -14,6 +16,11 @@ public class BreakOnHit : MonoBehaviour
 
     // ▼何個に減らすか（軽量化用：残す破片の最大数）
     public int maxFragments = 8;
+
+    // SE
+    public AudioSource audioSource;
+    public AudioClip breakSE;
+
 
     // ▼子オブジェクトのRigidbody一覧
     Rigidbody[] bodies;
@@ -47,7 +54,13 @@ public class BreakOnHit : MonoBehaviour
 
         // ▼指定タグのオブジェクトと当たったら破壊
         if (other.CompareTag(targetTag))
-        {
+        { 
+            // SE再生
+            if (audioSource != null && breakSE != null)
+            {
+                audioSource.PlayOneShot(breakSE);
+            }
+
             Break(other.transform.position);
         }
     }

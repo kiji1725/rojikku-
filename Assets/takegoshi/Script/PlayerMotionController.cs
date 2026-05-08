@@ -15,7 +15,11 @@ public class PlayerMotionController : MonoBehaviour
     string slide = "Slide";
     string jump = "Jump";
 
-    
+    // SE
+    [Header("SE")]
+    public AudioSource audioSource;
+    public AudioClip JumpSE;
+    public AudioClip SlidingSE;
 
     // ジャンプ用
     [SerializeField] private Rigidbody rb;
@@ -26,26 +30,51 @@ public class PlayerMotionController : MonoBehaviour
 
     public bool isSliding = false;
     bool isADS = false;
+    public bool isWall = false;
+    public bool isSlide = false;
+ 
 
     [SerializeField] private AngleChange angleChange;
 
     void Start()
     {
-
+        
     }
 
     private void FixedUpdate()
     {
+        // 壁走り
+        isWall =
+            Mathf.Abs(angle.CurrentZ - 90.0f) < 5.0f ||
+            Mathf.Abs(angle.CurrentZ + 90.0f) < 5.0f;
+
+        if (isWall)
+        {
+            Vector3 velocity = rb.linearVelocity;
+            velocity.y = 0f;
+            rb.linearVelocity = velocity;
+        }
         // 毎フレーム重力をかける
-        if (!isGround && angle.CurrentZ != 90.0f && angle.CurrentZ != -90.0f)
+        if (!isGround && !isWall)
         {
             rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
         }
+
+
+        // スライディング
+        isSlide =
+            Mathf.Abs(angle.CurrentZ) < 3.0f;
+
+
+
     }
 
 
     void Update()
     {
+
+        
+
         // 打つ前にこのモーションを入れる
         // ADS右クリック長押し あんま使わない
         if (Input.GetMouseButtonDown(1) && !jumpFlag && !isSliding)
@@ -65,16 +94,17 @@ public class PlayerMotionController : MonoBehaviour
 
         // スライディング↓orSキー
         if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding && !isADS)
-            && angleChange.CurrentZ == 0 )
+            && isSlide )
         {
+            audioSource.PlayOneShot(SlidingSE);
             isSliding = true;
             playerAnimator.SetTrigger(slide);
         }
         // ジャンプ↑orWキー
-        if ( ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding && !isADS)
-            && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
+        if ((Input.GetKeyDown(KeyCode.Space) && !jumpFlag && !isSliding && !isADS)
+            && !isWall)
         {
-
+            audioSource.PlayOneShot(JumpSE);
             jumpFlag = true;
             playerAnimator.SetTrigger(jump);
             Jump();

@@ -5,8 +5,9 @@ public class AngleChange : MonoBehaviour
     // 角度を変えるためのAnimatorとPlayerMotionControllerをインスペクターで設定
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerMotionController motionController;
-    [SerializeField] private Raycast ray;
-
+    //[SerializeField] private Raycast ray;
+    [SerializeField] private RayRight rayRight;
+    [SerializeField] private RayLeft rayLeft;
     // string GR = "GunRun";
 
     // 角度の最大値とステップ値を定数として定義
@@ -16,12 +17,19 @@ public class AngleChange : MonoBehaviour
     public int changeCount = 0;
 
     // 角度を変えるスピードをインスペクターで設定
-    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private float rotateSpeed = 50.0f;
 
     // 目標のZ軸の角度と現在のZ軸の角度を保持する変数
     float targetZ = 0f;
-    float currentZ = 0f;
-    
+    [SerializeField] float currentZ = 0f;
+
+    // SE
+    [Header("SE")]
+    public AudioSource audioSource;
+    public AudioClip GravitySE;
+
+
+
     void Update()
     {
 
@@ -41,12 +49,14 @@ public class AngleChange : MonoBehaviour
                 //currentZ = 45.0f;
                 targetZ = 45.0f;
             }
-            else if (changeCount == 1 && ray.IsWallRunRight)
+            else if (changeCount == 1 && rayRight.IsWallRunRight)
             {
                 // 2になる
                 changeCount++;
                 //currentZ = 90;
                 targetZ = 90.0f;
+                audioSource.PlayOneShot(GravitySE);
+
             }
             // それ以外
             else if (changeCount < 0)
@@ -71,12 +81,14 @@ public class AngleChange : MonoBehaviour
                 //currentZ = -45.0f;
                 targetZ = -45.0f;
             }
-            else if (changeCount == -1 && ray.IsWallRunLeft)
+            else if (changeCount == -1 && rayLeft.IsWallRunLeft)
             {
                 // -2になる
                 changeCount--;
                 //currentZ = -90.0f;
                 targetZ = -90.0f;
+                audioSource.PlayOneShot(GravitySE);
+
             }
             // それ以外
             else if (changeCount > 0)
