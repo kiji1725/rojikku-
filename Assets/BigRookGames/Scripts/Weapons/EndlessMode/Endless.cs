@@ -57,7 +57,7 @@ namespace BigRookGames.Weapons
             }
 
             // ‘O‰ñ‚Ì”­Ë‚©‚ç’x‰„ŠÔ‚ªŒo‰ß‚µ‚Ä‚¢‚ê‚ÎA•Ší‚ğ”­Ë‚·‚é
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 if (playerAmmo != null && playerAmmo.UseAmmo(1))// ’e‚ğÁ”ï‚Å‚«‚éê‡‚Í”­Ë
                 {

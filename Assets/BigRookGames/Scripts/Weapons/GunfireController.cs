@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 
 
@@ -43,9 +44,12 @@ namespace BigRookGames.Weapons
         // アニメーション管理
         [SerializeField] private Animator animator;
 
+        [SerializeField] private PlayerMotionController playerController;
+        
+        
         
 
-
+        
 
         private void Start()
         {
@@ -68,11 +72,13 @@ namespace BigRookGames.Weapons
             }
 
             // 前回の発射から遅延時間が経過していれば、武器を発射する
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 if (playerAmmo != null && playerAmmo.UseAmmo(1))// 弾を消費できる場合は発射
                 {
-                    FireWeapon();
+                    
+                    // アニメーションイベントで呼び出す関数
+                    // FireWeapon();
                 }
                 else
                 {
