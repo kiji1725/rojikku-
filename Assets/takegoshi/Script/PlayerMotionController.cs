@@ -15,7 +15,11 @@ public class PlayerMotionController : MonoBehaviour
     string slide = "Slide";
     string jump = "Jump";
 
-    
+    // SE
+    [Header("SE")]
+    public AudioSource audioSource;
+    public AudioClip JumpSE;
+    public AudioClip SlidingSE;
 
     // ƒWƒƒƒ“ƒv—p
     [SerializeField] private Rigidbody rb;
@@ -92,6 +96,7 @@ public class PlayerMotionController : MonoBehaviour
         if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding && !isADS)
             && isSlide )
         {
+            audioSource.PlayOneShot(SlidingSE);
             isSliding = true;
             playerAnimator.SetTrigger(slide);
         }
@@ -99,7 +104,7 @@ public class PlayerMotionController : MonoBehaviour
         if ( ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding && !isADS)
             && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
         {
-
+            audioSource.PlayOneShot(JumpSE);
             jumpFlag = true;
             playerAnimator.SetTrigger(jump);
             Jump();
