@@ -101,8 +101,8 @@ public class PlayerMotionController : MonoBehaviour
             playerAnimator.SetTrigger(slide);
         }
         // ジャンプ↑orWキー
-        if ( ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && !jumpFlag && !isSliding && !isADS)
-            && angleChange.CurrentZ != 90 && angleChange.CurrentZ != -90)
+        if ((Input.GetKeyDown(KeyCode.Space) && !jumpFlag && !isSliding && !isADS)
+            && !isWall)
         {
             audioSource.PlayOneShot(JumpSE);
             jumpFlag = true;
