@@ -5,8 +5,9 @@ public class AngleChange : MonoBehaviour
     // 角度を変えるためのAnimatorとPlayerMotionControllerをインスペクターで設定
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerMotionController motionController;
-    [SerializeField] private Raycast ray;
-
+    //[SerializeField] private Raycast ray;
+    [SerializeField] private RayRight rayRight;
+    [SerializeField] private RayLeft rayLeft;
     // string GR = "GunRun";
 
     // 角度の最大値とステップ値を定数として定義
@@ -41,7 +42,7 @@ public class AngleChange : MonoBehaviour
                 //currentZ = 45.0f;
                 targetZ = 45.0f;
             }
-            else if (changeCount == 1 && ray.IsWallRunRight)
+            else if (changeCount == 1 && rayRight.IsWallRunRight)
             {
                 // 2になる
                 changeCount++;
@@ -71,7 +72,7 @@ public class AngleChange : MonoBehaviour
                 //currentZ = -45.0f;
                 targetZ = -45.0f;
             }
-            else if (changeCount == -1 && ray.IsWallRunLeft)
+            else if (changeCount == -1 && rayLeft.IsWallRunLeft)
             {
                 // -2になる
                 changeCount--;
