@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Camera
   player: {fileID: 1968661637}
-  offset: {x: 0, y: 1.4, z: -4}
+  offset: {x: 0, y: 3, z: -4}
   rotation: {x: 50, y: 0, z: 0}
 --- !u!114 &853318026
 MonoBehaviour:
