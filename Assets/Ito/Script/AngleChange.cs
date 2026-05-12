@@ -14,6 +14,8 @@ public class AngleChange : MonoBehaviour
     public float maxAngle = 90f;
     public float stepAngle = 45f;
 
+    bool isJust;
+
     public int changeCount = 0;
 
     // 角度を変えるスピードをインスペクターで設定
@@ -28,7 +30,13 @@ public class AngleChange : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip GravitySE;
 
+    private void FixedUpdate()
+    {
 
+        // ぴったりになるまで動かないようにする
+        isJust = (targetZ == 45.0f || targetZ == 0.0f || targetZ == -45.0f);
+
+    }
 
     void Update()
     {
@@ -42,14 +50,15 @@ public class AngleChange : MonoBehaviour
             // 右移動
             // 0から1
             // 1から2
-            if (changeCount == 0)
+            if (changeCount == 0 && isJust)
             {
                 // ここで１になる
                 changeCount++;
                 //currentZ = 45.0f;
                 targetZ = 45.0f;
             }
-            else if (changeCount == 1 && rayRight.IsWallRunRight)
+            // 壁走り
+            else if (changeCount == 1 && rayRight.IsWallRunRight && isJust)
             {
                 // 2になる
                 changeCount++;
@@ -59,7 +68,7 @@ public class AngleChange : MonoBehaviour
 
             }
             // それ以外
-            else if (changeCount < 0)
+            else if (changeCount < 0 && isJust)
             {
                 changeCount++;
                 //currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
@@ -74,14 +83,15 @@ public class AngleChange : MonoBehaviour
             // 左移動
             // 0からー1
             // －1から－2
-            if (changeCount == 0)
+            if (changeCount == 0 && isJust)
             {
                 // ここで-１になる
                 changeCount--;
                 //currentZ = -45.0f;
                 targetZ = -45.0f;
             }
-            else if (changeCount == -1 && rayLeft.IsWallRunLeft)
+            // 壁走り
+            else if (changeCount == -1 && rayLeft.IsWallRunLeft && isJust)
             {
                 // -2になる
                 changeCount--;
@@ -91,7 +101,7 @@ public class AngleChange : MonoBehaviour
 
             }
             // それ以外
-            else if (changeCount > 0)
+            else if (changeCount > 0 && isJust)
             {
                 changeCount--;
                 //currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
