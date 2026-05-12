@@ -9,7 +9,8 @@ public class FloorSpawner : MonoBehaviour
     [Header("通常床（ランダム）")]
     public GameObject[] floorPrefabs;
 
-    public Transform player;
+    [Header("Stage全体の親")]
+    public Transform stageRoot;
 
     [Header("生成設定")]
     public int startSpawnCount = 5;
@@ -28,31 +29,39 @@ public class FloorSpawner : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < startSpawnCount; i++)
-        {
             SpawnStartFloor();
-        }
 
         for (int i = 0; i < aheadCount; i++)
+            SpawnRandomFloor();
+    }
+
+    void Update()
+    {
+        HandleSpawn();
+        HandleDelete();
+    }
+
+    void HandleSpawn()
+    {
+        float referenceZ = -stageRoot.position.z;
+
+        if (referenceZ + (aheadCount * floorLength) > nextZ)
         {
             SpawnRandomFloor();
         }
     }
 
-    void Update()
+    void HandleDelete()
     {
-        if (player.position.z + (aheadCount * floorLength) > nextZ)
-        {
-            SpawnRandomFloor();
-        }
+        if (floors.Count == 0) return;
 
-        if (floors.Count > 0)
-        {
-            GameObject first = floors.Peek();
+        GameObject first = floors.Peek();
 
-            if (player.position.z - first.transform.position.z > deleteDistance)
-            {
-                Destroy(floors.Dequeue()); // 子も一緒に消える
-            }
+        float referenceZ = -stageRoot.position.z;
+
+        if (referenceZ - first.transform.position.z > deleteDistance)
+        {
+            Destroy(floors.Dequeue());
         }
     }
 
@@ -75,7 +84,6 @@ public class FloorSpawner : MonoBehaviour
         GameObject obj = Instantiate(prefab, spawnPos, Quaternion.identity);
         floors.Enqueue(obj);
 
-        // ▼ここが超重要
         if (sideSpawner != null)
         {
             sideSpawner.SpawnSideObjects(spawnPos, obj.transform);
