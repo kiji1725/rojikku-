@@ -3,7 +3,7 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public Transform player;                
-    public Vector3 offset = new Vector3(0f, 1.4f, -4f);  
+    public Vector3 offset = new Vector3(0f, 1.4f, -6f);  
     public Vector3 rotation = new Vector3(50f, 0f, 0f);
     
     private float fixedX; // ‰ŠúˆÊ’uŠî€‚ÌXÀ•W
