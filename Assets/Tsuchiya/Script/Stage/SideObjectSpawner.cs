@@ -11,14 +11,13 @@ public class SideObjectSpawner : MonoBehaviour
     [Header("前後のランダム幅")]
     public float zRandomRange = 2f;
 
-    [Header("生成確率（0?1）")]
+    [Header("生成確率（0～1）")]
     [Range(0f, 1f)]
     public float spawnChance = 0.8f;
 
-    // ▼親を受け取る
     public void SpawnSideObjects(Vector3 basePos, Transform parent)
     {
-        if (sidePrefabs.Length == 0) return;
+        if (sidePrefabs == null || sidePrefabs.Length == 0) return;
 
         TrySpawn(basePos, -sideOffset, parent);
         TrySpawn(basePos, sideOffset, parent);
@@ -29,14 +28,16 @@ public class SideObjectSpawner : MonoBehaviour
         if (Random.value > spawnChance) return;
 
         GameObject prefab = sidePrefabs[Random.Range(0, sidePrefabs.Length)];
+        if (prefab == null) return;
 
-        Vector3 pos = basePos;
-        pos.x += xOffset;
-        pos.z += Random.Range(-zRandomRange, zRandomRange);
+        Vector3 pos = new Vector3(
+            basePos.x + xOffset,
+            basePos.y,
+            basePos.z + Random.Range(-zRandomRange, zRandomRange)
+        );
 
-        Quaternion rot = Quaternion.Euler(-90f, Random.Range(0f, 360f), 0f);
+        Quaternion rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
 
-        // ▼親にぶら下げる
-        GameObject obj = Instantiate(prefab, pos, rot, parent);
+        Instantiate(prefab, pos, rot, parent);
     }
 }
