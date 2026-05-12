@@ -14,7 +14,7 @@ public class AngleChange : MonoBehaviour
     public float maxAngle = 90f;
     public float stepAngle = 45f;
 
-    bool isJust;
+    public bool isJust;
 
     public int changeCount = 0;
 
@@ -34,7 +34,15 @@ public class AngleChange : MonoBehaviour
     {
 
         // ‚Ò‚Á‚½‚è‚É‚È‚é‚Ü‚Å“®‚©‚È‚¢‚æ‚¤‚É‚·‚é
-        isJust = (targetZ == 45.0f || targetZ == 0.0f || targetZ == -45.0f);
+        isJust =
+            Mathf.Abs(Mathf.DeltaAngle(currentZ, 0.0f)) < 5.0f ||
+            Mathf.Abs(Mathf.DeltaAngle(currentZ, -45.0f)) < 5.0f ||
+            Mathf.Abs(Mathf.DeltaAngle(currentZ, +45.0f)) < 5.0f ||
+            Mathf.Abs(Mathf.DeltaAngle(currentZ, -90.0f)) < 5.0f ||
+            Mathf.Abs(Mathf.DeltaAngle(currentZ, +90.0f)) < 5.0f;
+
+
+            
 
     }
 
