@@ -2093,6 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d57cef9f8b8dfe40b9036798002a2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pose
+  pauseButton: {fileID: 1221761805}
 --- !u!1 &1228655374
 GameObject:
   m_ObjectHideFlags: 0
