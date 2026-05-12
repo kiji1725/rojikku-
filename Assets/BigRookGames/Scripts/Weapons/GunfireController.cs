@@ -65,14 +65,14 @@ namespace BigRookGames.Weapons
         private void Update()
         {
             // シーン内で武器を回転させる
-            if (rotate)     //武器を回転させる
-            {
-                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
-                                                                        + rotationSpeed, transform.localEulerAngles.z);
-            }
+            //if (rotate)     //武器を回転させる
+            //{
+            //    transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
+            //                                                            + rotationSpeed, transform.localEulerAngles.z);
+            //}
 
             // 前回の発射から遅延時間が経過していれば、武器を発射する
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (playerAmmo != null && playerAmmo.UseAmmo(1))// 弾を消費できる場合は発射
                 {
@@ -110,8 +110,10 @@ namespace BigRookGames.Weapons
             // 投射物オブジェクトを撃つ
             if (projectilePrefab != null)
             {
-                GameObject newProjectile = Instantiate(projectilePrefab, 
-                    muzzlePosition.transform.position, muzzlePosition.transform.rotation, transform);   //弾の生成
+                GameObject newProjectile = Instantiate(
+                    projectilePrefab, 
+                    muzzlePosition.transform.position, 
+                    muzzlePosition.transform.rotation);   //弾の生成
             }
 
             // 必要に応じて、ゲームオブジェクトを無効にする
