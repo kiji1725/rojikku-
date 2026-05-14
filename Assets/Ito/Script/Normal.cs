@@ -57,13 +57,10 @@ public class Normal : MonoBehaviour
         // フェードアウト処理
         while (time < fadeDuration)
         {
-            // フェードアウトの進行時間を更新
             time += Time.deltaTime;
-            // フェードパネルのアルファ値を更新
+            time += Time.deltaTime;
             color.a = time / fadeDuration;
-            // フェードパネルの色を更新
             fadePanel.color = color;
-            // 次のフレームまで待機
             yield return null;
         }
         // フェードアウト完了後、アルファ値を完全に1にする

@@ -329,7 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d447a8d7b9e9794d98608ec2afd65f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResultScore
-  titleText: {fileID: 190721201}
   scoreText: {fileID: 1761173393}
   rankText: {fileID: 1633571803}
   duration: 1

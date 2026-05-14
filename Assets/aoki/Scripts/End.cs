@@ -39,14 +39,6 @@ public class End : MonoBehaviour
         SceneManager.LoadScene("Title 1");
     }
 
-    /*
-    IEnumerator FadeAndLoad()
-    {
-        yield return StartCoroutine(FadeOut());
-        SceneManager.LoadScene("Title 1");
-    }
-     */
-
     IEnumerator FadeOut()
     {
         float time = 0f;
