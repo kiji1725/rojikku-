@@ -25,14 +25,11 @@ public class PlayerMove : MonoBehaviour
         moveX = 0.0f;
         moveZ = 0.0f;
 
-        /*if (Input.GetKey(KeyCode.T))*/ moveZ += 1f;
-        //if (Input.GetKey(KeyCode.G)) moveZ -= 1f;
-        //if (Input.GetKey(KeyCode.F)) moveX -= 1f;
-        //if (Input.GetKey(KeyCode.H)) moveX += 1f;
+        moveZ += 1f;
         
         move = new Vector3(moveX, 0, moveZ).normalized;
 
-        if (transform.position.y < -5f)
+        if (transform.position.y < -5.0f)
         {
             SceneManager.LoadScene("GameOver");
         }

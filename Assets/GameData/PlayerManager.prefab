@@ -109,12 +109,13 @@ PrefabInstance:
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 3298446821236069250}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7613344238116026155, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9017741442575196064, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 4573090397550208784}
     - targetCorrespondingSourceObject: {fileID: 3275613348518907380, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
       insertIndex: -1
@@ -314,7 +315,8 @@ PrefabInstance:
       propertyPath: rayDistance
       value: 7.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 389928543701843271, guid: 49ac245b248db6d44b6615edccc521db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
