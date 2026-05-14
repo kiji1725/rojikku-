@@ -3,35 +3,29 @@ using UnityEngine.SceneManagement;
 
 public class GameEnd : MonoBehaviour
 {
+    // スコア
     [SerializeField] Score score;
+    // ゲームオーバーとゲームクリアで同じ処理をするため、共通の関数
+    public void GameOver(){EndGame();}
+    public void GameClear(){EndGame();}
 
-    public void GameOver()
-    {
-        EndGame();
-    }
-
-    public void GameClear()
-    {
-        EndGame();
-    }
-
+    // ゲーム終了の処理
     void EndGame()
     {
+        // スコアがない場合は処理しない
         if (score == null) return;
-
-        // ▼① スコア更新停止
+        // スコアの計算を止める
         score.StopScore();
-
-        // ▼② 最終スコアを強制保存（超重要）
+        // スコアをスコアマネージャーに渡す
         if (ScoreManager.instance != null)
         {
             ScoreManager.instance.SetScore(score.GetCurrentScore());
         }
-
-        // ▼③ 少し待ってから遷移（これがないとズレる）
+        // 結果シーンに遷移
         Invoke(nameof(LoadResult), 0.1f);
     }
 
+    // 結果シーンの読み込み
     void LoadResult()
     {
         SceneManager.LoadScene("ResultScene");

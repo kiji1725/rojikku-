@@ -39,14 +39,6 @@ public class Re : MonoBehaviour
         SceneManager.LoadScene("DifficultySelection");
     }
 
-    /*
-    IEnumerator FadeAndLoad()
-    {
-        yield return StartCoroutine(FadeOut());
-        SceneManager.LoadScene("DifficultySelection");
-    }
-     */
-
     IEnumerator FadeOut()
     {
         float time = 0f;
