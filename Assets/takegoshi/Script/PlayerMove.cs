@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position += move * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * move;
     }
     void Update()
     {

@@ -20,7 +20,7 @@ public class PlayerMoveTest : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position += move * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * move;
     }
     void Update()
     {
@@ -32,9 +32,9 @@ public class PlayerMoveTest : MonoBehaviour
         if (Input.GetKey(KeyCode.F)) moveX -= 1f;
         if (Input.GetKey(KeyCode.H)) moveX += 1f;
 
-        move = new Vector3(moveX, 0, moveZ).normalized;
+        move = new Vector3(moveX, 0.0f, moveZ).normalized;
 
-        if (transform.position.y < -5f)
+        if (transform.position.y < -5.0f)
         {
             SceneManager.LoadScene("GameOver 1");
         }

@@ -32,7 +32,6 @@ public class AngleChange : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         // ‚Ò‚Á‚½‚è‚É‚È‚é‚Ü‚Å“®‚©‚È‚¢‚æ‚¤‚É‚·‚é
         isJust =
             Mathf.Abs(Mathf.DeltaAngle(currentZ, 0.0f)) < 5.0f ||
@@ -40,10 +39,6 @@ public class AngleChange : MonoBehaviour
             Mathf.Abs(Mathf.DeltaAngle(currentZ, +45.0f)) < 5.0f ||
             Mathf.Abs(Mathf.DeltaAngle(currentZ, -90.0f)) < 5.0f ||
             Mathf.Abs(Mathf.DeltaAngle(currentZ, +90.0f)) < 5.0f;
-
-
-            
-
     }
 
     void Update()

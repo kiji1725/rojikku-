@@ -4,7 +4,7 @@ public class RotateItem : MonoBehaviour
 {
 
     float startPos;
-    float speed = 2.0f;
+    const float speed = 2.0f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

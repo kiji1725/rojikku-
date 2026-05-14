@@ -64,19 +64,12 @@ namespace BigRookGames.Weapons
 
         private void Update()
         {
-            // シーン内で武器を回転させる
-            //if (rotate)     //武器を回転させる
-            //{
-            //    transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
-            //                                                            + rotationSpeed, transform.localEulerAngles.z);
-            //}
 
             // 前回の発射から遅延時間が経過していれば、武器を発射する
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (playerAmmo != null && playerAmmo.UseAmmo(1))// 弾を消費できる場合は発射
                 {
-
                     // アニメーションイベントで呼び出す関数
                     animator.SetTrigger("ADS");
                 }

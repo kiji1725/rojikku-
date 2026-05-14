@@ -5,14 +5,6 @@ public class ColliderController : MonoBehaviour
     [SerializeField] private CapsuleCollider capsule;
     [SerializeField] private PlayerMotionController playerMotion;
 
-    void Start()
-    {
-        
-    }
-
-
-
-
     void Update()
     {
 
