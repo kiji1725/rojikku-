@@ -10,10 +10,10 @@ public class PlayerMotionController : MonoBehaviour
     [SerializeField] private AngleChange angle;
 
     // アニメーション用文字列
-    string ads = "ADS";
-    string run = "Run";
-    string slide = "Slide";
-    string jump = "Jump";
+    const string ads = "ADS";
+    const string run = "Run";
+    const string slide = "Slide";
+    const string jump = "Jump";
 
     // SE
     [Header("SE")]
@@ -22,24 +22,21 @@ public class PlayerMotionController : MonoBehaviour
     public AudioClip SlidingSE;
 
     // ジャンプ用
+    [Header("Jump")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float playerGravity = -15.0f;
-    bool jumpFlag = false;
     public bool isGround = false;
+    bool jumpFlag = false;
+
+    bool isADS = false;
 
     public bool isSliding = false;
-    bool isADS = false;
     public bool isWall = false;
     public bool isSlide = false;
  
 
     [SerializeField] private AngleChange angleChange;
-
-    void Start()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
@@ -57,15 +54,11 @@ public class PlayerMotionController : MonoBehaviour
         // 毎フレーム重力をかける
         if (!isGround && !isWall)
         {
-            rb.linearVelocity += Vector3.up * playerGravity * Time.fixedDeltaTime;
+            rb.linearVelocity += playerGravity * Time.fixedDeltaTime * Vector3.up;
         }
 
-
         // スライディング
-        isSlide =
-            Mathf.Abs(angle.CurrentZ) < 3.0f;
-
-
+        isSlide = Mathf.Abs(angle.CurrentZ) < 5.0f;
 
     }
 
@@ -78,7 +71,6 @@ public class PlayerMotionController : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         }
         
-
         // 打つ前にこのモーションを入れる
         // ADS右クリック長押し あんま使わない
         if (Input.GetMouseButtonDown(1) && !jumpFlag && !isSliding)
@@ -89,12 +81,6 @@ public class PlayerMotionController : MonoBehaviour
         {
             playerAnimator.SetTrigger(run);
         }
-
-        // アニメーションテスト
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    playerAnimator.SetTrigger(ads);
-        //}
 
         // スライディング↓orSキー
         if (  ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !jumpFlag && !isSliding)
@@ -127,8 +113,6 @@ public class PlayerMotionController : MonoBehaviour
         isGround = false;
     }
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -160,11 +144,10 @@ public class PlayerMotionController : MonoBehaviour
         }
     }
 
-
+    // スライディング中の行動制限
     public bool IsSliding {  get { return isSliding; } }
-    // ジャンプ中に左右移動させないため
+    // ジャンプ中の行動制限
     public bool JumpFlag { get { return jumpFlag; } }
-
 
     // アニメーションのEventに使う関数
     public void SetRifleRun()
@@ -191,12 +174,5 @@ public class PlayerMotionController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         playerAnimator.SetTrigger(run);
     }
-    //public void IsADSOn()
-    //{
-    //    isADS = true;
-    //}
-
-
-
 
 }
