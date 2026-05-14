@@ -5459,7 +5459,7 @@ PrefabInstance:
       objectReference: {fileID: 1654893724}
     - target: {fileID: 2523984992438180206, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
       propertyPath: currentAmmo
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2539300940784234876, guid: 1978d550d62513041bac2f137eb6040b, type: 3}
       propertyPath: player
