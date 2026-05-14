@@ -5,17 +5,14 @@ public class AngleChange : MonoBehaviour
     // 角度を変えるためのAnimatorとPlayerMotionControllerをインスペクターで設定
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerMotionController motionController;
-    //[SerializeField] private Raycast ray;
+    // 壁走りの判定をするためのRayRightとRayLeftをインスペクターで設定
     [SerializeField] private RayRight rayRight;
     [SerializeField] private RayLeft rayLeft;
-    // string GR = "GunRun";
 
-    // 角度の最大値とステップ値を定数として定義
+    // 角度を変えるための設定
     public float maxAngle = 90f;
     public float stepAngle = 45f;
-
     public bool isJust;
-
     public int changeCount = 0;
 
     // 角度を変えるスピードをインスペクターで設定
@@ -30,6 +27,7 @@ public class AngleChange : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip GravitySE;
 
+    // 角度を変えるための処理
     private void FixedUpdate()
     {
         // ぴったりになるまで動かないようにする
@@ -41,23 +39,17 @@ public class AngleChange : MonoBehaviour
             Mathf.Abs(Mathf.DeltaAngle(currentZ, +90.0f)) < 5.0f;
     }
 
+    // 角度を変えるための処理
     void Update()
     {
-
-        
-
         // 走るアニメーションのときだけ角度を変える
         if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && !motionController.JumpFlag)
         {
-
-            // 右移動
-            // 0から1
-            // 1から2
+            // 右移動、0~1、1~2
             if (changeCount == 0 && isJust)
             {
                 // ここで１になる
                 changeCount++;
-                //currentZ = 45.0f;
                 targetZ = 45.0f;
             }
             // 壁走り
@@ -65,16 +57,13 @@ public class AngleChange : MonoBehaviour
             {
                 // 2になる
                 changeCount++;
-                //currentZ = 90;
                 targetZ = 90.0f;
                 audioSource.PlayOneShot(GravitySE);
-
             }
             // それ以外
             else if (changeCount < 0 && isJust)
             {
                 changeCount++;
-                //currentZ = Mathf.Min(currentZ + stepAngle, maxAngle);
                 targetZ = Mathf.Min(currentZ + stepAngle, maxAngle);
             } 
         }
@@ -82,15 +71,11 @@ public class AngleChange : MonoBehaviour
         // ジャンプのときに角度を変えることができないようにする
         if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && !motionController.JumpFlag)
         {
-
-            // 左移動
-            // 0からー1
-            // －1から－2
+            // 左移動、0~-1、-1~-2
             if (changeCount == 0 && isJust)
             {
                 // ここで-１になる
                 changeCount--;
-                //currentZ = -45.0f;
                 targetZ = -45.0f;
             }
             // 壁走り
@@ -98,7 +83,6 @@ public class AngleChange : MonoBehaviour
             {
                 // -2になる
                 changeCount--;
-                //currentZ = -90.0f;
                 targetZ = -90.0f;
                 audioSource.PlayOneShot(GravitySE);
 
@@ -107,18 +91,12 @@ public class AngleChange : MonoBehaviour
             else if (changeCount > 0 && isJust)
             {
                 changeCount--;
-                //currentZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
                 targetZ = Mathf.Max(currentZ - stepAngle, -maxAngle);
             }
-
         }
-
-        // 目標のZ軸の角度に向かって現在のZ軸の角度を徐々に変える
+        // 現在のZ軸の角度を目標のZ軸の角度に近づける
         currentZ = Mathf.Lerp(currentZ, targetZ, Time.deltaTime * rotateSpeed);
-
         transform.rotation = Quaternion.Euler(0, 0, currentZ);
-
-
     }
 
     // 現在のZ軸の角度を取得するプロパティ
