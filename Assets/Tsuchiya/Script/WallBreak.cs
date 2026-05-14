@@ -54,7 +54,9 @@ public class BreakOnHit : MonoBehaviour
 
         // ▼指定タグのオブジェクトと当たったら破壊
         if (other.CompareTag(targetTag))
-        { 
+        {
+
+            Debug.Log("壁に当たった");
             // SE再生
             if (audioSource != null && breakSE != null)
             {
