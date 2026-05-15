@@ -30,16 +30,12 @@ public class RayLeft : MonoBehaviour
         {
             wallRunLeft = true;
 
-            Debug.Log("¶“–‚½‚Á‚½êŠ : " + hitLeft.point);
-
         }
 
         // ¶‚ª“–‚½‚Á‚Ä‚È‚¢‚Æ‚«
         if (!Physics.Raycast(transform.position, leftFront, out _, rayDistance))
         {
-
             wallRunLeft = false;
-            Debug.Log("¶“–‚½‚Á‚Ä‚È‚¢");
 
         }
 
