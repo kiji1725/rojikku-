@@ -22,10 +22,6 @@ public class RayRight : MonoBehaviour
         // Ray構造体を作成
         Ray ray = new(transform.position, transform.forward);
 
-        // RaycastHit には当たったオブジェクトの情報が入る
-
-//        RaycastHit hitRight;
-
         // 右前方向
         Vector3 rightFront = (transform.forward + transform.right * frontWeight).normalized;
         
