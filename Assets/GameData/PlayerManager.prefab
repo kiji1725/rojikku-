@@ -113,6 +113,26 @@ PrefabInstance:
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 3298446821236069250}
+    - target: {fileID: 8533939475497288986, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533939475497288986, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533939475497288986, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533939475497288986, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533939475497288986, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7613344238116026155, guid: f4db2a5be9cb60942b09d505b3582226, type: 3}
     m_RemovedGameObjects: []
