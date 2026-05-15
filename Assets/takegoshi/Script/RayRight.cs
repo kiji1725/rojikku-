@@ -33,16 +33,14 @@ public class RayRight : MonoBehaviour
         {
             //Debug.Log("ヒットまでの距離: " + hit.distance);
             wallRunRight = true;
-            Debug.Log("右当たった場所 : " + hitRight.point);
-
+            
         }
 
         // 右が当たってないとき
         if (!Physics.Raycast(transform.position, rightFront, out _, rayDistance))
         {
             wallRunRight = false;
-            Debug.Log("右当たってない");
-
+            
         }
 
         // 青い線を描画
